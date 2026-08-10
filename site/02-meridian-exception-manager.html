@@ -1,0 +1,549 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meridian Exception Manager — AI UX Case Studies</title>
+</head>
+<body style="margin:0;background:#fff;">
+<div style="font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;background:#fff;border-bottom:1px solid #E5E5E5;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;">
+  <a href="index.html" style="text-decoration:none;color:#4A4A4A;font-size:14px;">&larr; All case studies</a>
+  <div><span style="font-size:12px;color:#8A8A8A;">michael</span><span style="font-size:16px;color:#4A4A4A;">thibodea(UX)</span></div>
+</div>
+<div class="mtd-02">
+  <style>
+    .mtd-02 {
+      --rust: #D54E2B;
+      --coral: #F5805C;
+      --lime: #BFFD20;
+      --blue: #1059FF;
+      --purple: #AF00EF;
+      --cyan: #00BCD9;
+      --magenta: #FF40F4;
+      --pp-red: #DF505C;
+      --bg-blue: #8AD9F8;
+      --ux-green: #41854F;
+      --fs-purple: #7C417E;
+      --persona-green: #A6DF85;
+      --persona-teal: #66E3DA;
+      --gray: #4a4a4a;
+      --gray-light: #8a8a8a;
+      font-family: 'Century Gothic', 'Poppins', sans-serif;
+      color: var(--gray);
+      background: #ffffff;
+      max-width: 1040px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    .mtd-02 * { box-sizing: border-box; }
+    .mtd-02 h1, .mtd-02 h2, .mtd-02 h3, .mtd-02 h4 { font-weight: 300; color: #1a1a1a; margin: 0; }
+    .mtd-02 section { padding: 64px 32px; }
+    .mtd-02 .mtd-02__breadcrumb {
+      font-size: 12px;
+      color: var(--gray-light);
+      margin-bottom: 20px;
+      letter-spacing: 0.01em;
+    }
+    .mtd-02 .mtd-02__breadcrumb .sep { display: inline-block; width: 24px; }
+
+    /* 1. Hero / Cover */
+    .mtd-02__hero {
+      position: relative;
+      padding: 88px 32px 96px;
+      background: linear-gradient(160deg, #F5805C 0%, #FF8C7A 45%, #FFB088 100%);
+      overflow: hidden;
+    }
+    .mtd-02__hero-bars {
+      position: absolute;
+      top: 0; left: 0;
+      width: 10px; height: 100%;
+      display: flex; flex-direction: column;
+    }
+    .mtd-02__hero-bars span { flex: 1; }
+    .mtd-02__hero-bars span:first-child { background: var(--lime); }
+    .mtd-02__hero-bars span:last-child { background: var(--rust); }
+    .mtd-02__hero-inner { max-width: 780px; }
+    .mtd-02__hero-eyebrow { color: rgba(255,255,255,0.85); font-size: 13px; margin-bottom: 14px; }
+    .mtd-02__hero h1 { color: #fff; font-size: 46px; line-height: 1.1; margin-bottom: 18px; }
+    .mtd-02__hero-tagline { color: rgba(255,255,255,0.95); font-size: 18px; font-weight: 400; margin-bottom: 22px; }
+    .mtd-02__hero-desc { color: rgba(255,255,255,0.92); font-size: 15px; max-width: 620px; margin-bottom: 26px; }
+    .mtd-02__hero-quote {
+      font-style: italic;
+      color: #fff;
+      font-size: 17px;
+      border-left: 3px solid rgba(255,255,255,0.6);
+      padding-left: 16px;
+      max-width: 520px;
+    }
+    .mtd-02__hero-quote small { display: block; font-style: normal; font-size: 12px; color: rgba(255,255,255,0.75); margin-top: 8px; }
+    .mtd-02__status-pill {
+      display: inline-block;
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+      font-size: 12px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    /* 2. Introduction */
+    .mtd-02__intro-grid { display: flex; gap: 48px; flex-wrap: wrap; }
+    .mtd-02__intro-main { flex: 2 1 380px; }
+    .mtd-02__intro-side { flex: 1 1 240px; }
+    .mtd-02__circle {
+      background: var(--persona-teal);
+      color: #ffffff;
+      border-radius: 50%;
+      width: 200px; height: 200px;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center;
+      padding: 24px;
+      margin: 0 auto;
+    }
+    .mtd-02__circle .label { font-size: 11px; text-transform: none; opacity: 0.9; margin-bottom: 8px; }
+    .mtd-02__circle ul { list-style: none; padding: 0; margin: 0; font-size: 13px; line-height: 1.5; }
+    .mtd-02__problem-list { margin-top: 18px; padding-left: 20px; font-size: 14px; }
+    .mtd-02__problem-list li { margin-bottom: 8px; }
+    .mtd-02__role-note { font-size: 13px; color: var(--gray-light); margin-top: 20px; }
+
+    /* 3 & 8. KPI stat block */
+    .mtd-02__kpi-section h2 { font-size: 30px; margin-bottom: 8px; }
+    .mtd-02__kpi-sub { font-size: 14px; color: var(--gray-light); margin-bottom: 32px; max-width: 620px; }
+    .mtd-02__kpi-row { display: flex; gap: 48px; flex-wrap: wrap; margin-bottom: 28px; }
+    .mtd-02__kpi { flex: 1 1 220px; }
+    .mtd-02__kpi-num { font-size: 72px; font-weight: 300; line-height: 1; margin-bottom: 10px; }
+    .mtd-02__kpi-num.blue { color: var(--blue); }
+    .mtd-02__kpi-num.purple { color: var(--purple); }
+    .mtd-02__kpi-num.cyan { color: var(--cyan); }
+    .mtd-02__kpi-num.magenta { color: var(--magenta); }
+    .mtd-02__kpi-label { font-size: 14px; color: var(--gray); max-width: 260px; }
+    .mtd-02__kpi-flag { font-size: 11px; color: var(--gray-light); font-style: italic; display: block; margin-top: 6px; }
+    .mtd-02__methods { font-size: 14px; margin-top: 20px; }
+    .mtd-02__methods strong { color: #1a1a1a; font-weight: 400; }
+
+    /* 4. Pain points */
+    .mtd-02__pain-list { list-style: none; padding: 0; margin: 24px 0; counter-reset: pain; }
+    .mtd-02__pain-list li {
+      counter-increment: pain;
+      display: flex;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 15px;
+    }
+    .mtd-02__pain-list li::before {
+      content: counter(pain);
+      flex: 0 0 auto;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--pp-red);
+      color: #fff;
+      font-size: 13px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .mtd-02__callout-quote {
+      text-align: center;
+      font-style: italic;
+      color: var(--gray);
+      font-size: 19px;
+      max-width: 620px;
+      margin: 36px auto 0;
+      line-height: 1.5;
+    }
+    .mtd-02__callout-quote small { display: block; font-style: normal; font-size: 12px; color: var(--gray-light); margin-top: 10px; }
+
+    /* 5. Persona card */
+    .mtd-02__persona-card {
+      border: 1px solid #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 760px;
+      margin: 0 auto;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.05);
+    }
+    .mtd-02__persona-top { display: flex; gap: 20px; padding: 24px 24px 0; align-items: center; }
+    .mtd-02__persona-photo {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: #f0f0f0;
+      flex: 0 0 auto;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px; color: var(--gray-light); text-align: center;
+    }
+    .mtd-02__persona-meta h3 { font-size: 20px; color: #1a1a1a; margin-bottom: 4px; }
+    .mtd-02__persona-meta p { font-size: 13px; color: var(--gray-light); margin: 0; }
+    .mtd-02__persona-bar { height: 5px; background: var(--persona-green); margin: 20px 0 0; }
+    .mtd-02__persona-quote {
+      font-style: italic;
+      font-size: 16px;
+      padding: 20px 24px;
+      color: var(--gray);
+      background: #fafafa;
+    }
+    .mtd-02__persona-cols { display: flex; gap: 24px; flex-wrap: wrap; padding: 4px 24px 24px; }
+    .mtd-02__persona-col { flex: 1 1 200px; }
+    .mtd-02__persona-col h4 { font-size: 12px; color: var(--gray-light); text-transform: none; margin-bottom: 8px; }
+    .mtd-02__persona-col ul { margin: 0; padding-left: 18px; font-size: 13px; }
+    .mtd-02__persona-col li { margin-bottom: 6px; }
+    .mtd-02__persona-flag { font-size: 11px; color: var(--gray-light); font-style: italic; padding: 0 24px 20px; }
+
+    /* 6. Four column framework */
+    .mtd-02__framework { display: flex; gap: 2px; flex-wrap: wrap; margin-top: 28px; }
+    .mtd-02__fw-col { flex: 1 1 160px; color: #fff; padding: 22px 16px; min-height: 260px; position: relative; }
+    .mtd-02__fw-col.pp { background: var(--pp-red); }
+    .mtd-02__fw-col.bg { background: var(--bg-blue); }
+    .mtd-02__fw-col.ux { background: var(--ux-green); }
+    .mtd-02__fw-col.fs { background: var(--fs-purple); }
+    .mtd-02__fw-col h4 { color: #fff; font-size: 14px; margin-bottom: 14px; }
+    .mtd-02__fw-col ul { margin: 0; padding-left: 16px; font-size: 12.5px; }
+    .mtd-02__fw-col li { margin-bottom: 8px; }
+    .mtd-02__fw-op {
+      display: none;
+    }
+    @media (min-width: 760px) {
+      .mtd-02__framework { align-items: stretch; }
+    }
+
+    /* 7. Process */
+    .mtd-02__process-stage { margin-bottom: 22px; padding-bottom: 22px; border-bottom: 1px solid #eee; }
+    .mtd-02__process-stage:last-child { border-bottom: none; }
+    .mtd-02__process-stage h4 { font-size: 15px; color: #1a1a1a; margin-bottom: 6px; }
+    .mtd-02__process-stage p { font-size: 14px; margin: 0; }
+    .mtd-02__process-stage .same { color: var(--gray); }
+    .mtd-02__process-stage .new { color: var(--gray); }
+    .mtd-02__process-stage .same strong, .mtd-02__process-stage .new strong { color: #1a1a1a; font-weight: 400; }
+    .mtd-02__callout {
+      border-radius: 8px;
+      padding: 18px 20px;
+      font-size: 14px;
+      margin: 24px 0;
+    }
+    .mtd-02__callout.learn { background: #eef7ee; border-left: 4px solid var(--ux-green); }
+    .mtd-02__callout.challenge { background: #fbeceb; border-left: 4px solid var(--pp-red); }
+    .mtd-02__callout h4 { font-size: 12px; margin-bottom: 8px; color: #1a1a1a; }
+    .mtd-02__visual-placeholder {
+      border: 1px dashed #ccc;
+      border-radius: 8px;
+      padding: 40px 20px;
+      text-align: center;
+      color: var(--gray-light);
+      font-size: 13px;
+      margin: 24px 0;
+    }
+
+    /* 9. Key Insight */
+    .mtd-02__insight {
+      background: #fafafa;
+      border-radius: 12px;
+      padding: 44px;
+      text-align: center;
+    }
+    .mtd-02__insight blockquote {
+      font-size: 22px;
+      font-weight: 300;
+      color: #1a1a1a;
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    .mtd-02__insight small { display: block; margin-top: 18px; font-size: 12px; color: var(--gray-light); }
+
+    /* 10. CTA */
+    .mtd-02__cta {
+      background: linear-gradient(160deg, #F5805C 0%, #FF8C7A 45%, #FFB088 100%);
+      text-align: center;
+      padding: 72px 32px;
+    }
+    .mtd-02__cta h2 { color: #fff; font-size: 28px; margin-bottom: 14px; }
+    .mtd-02__cta p { color: rgba(255,255,255,0.92); font-size: 15px; margin-bottom: 24px; }
+    .mtd-02__cta a {
+      display: inline-block;
+      background: #fff;
+      color: var(--rust);
+      padding: 12px 28px;
+      border-radius: 24px;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 700px) {
+      .mtd-02 section { padding: 44px 20px; }
+      .mtd-02__hero { padding: 56px 20px 64px; }
+      .mtd-02__hero h1 { font-size: 32px; }
+      .mtd-02__kpi-row { gap: 28px; }
+      .mtd-02__kpi-num { font-size: 52px; }
+      .mtd-02__intro-grid { flex-direction: column; }
+      .mtd-02__circle { margin-bottom: 24px; }
+      .mtd-02__framework { flex-direction: column; }
+      .mtd-02__persona-top { flex-direction: column; text-align: center; }
+    }
+  </style>
+
+  <!-- 1. Hero / Cover -->
+  <div class="mtd-02__hero">
+    <div class="mtd-02__hero-bars"><span></span><span></span></div>
+    <div class="mtd-02__hero-inner">
+      <span class="mtd-02__status-pill">Real, shipped v1</span>
+      <p class="mtd-02__hero-eyebrow">Anchorpoint Capital · Meridian · Operations</p>
+      <h1>Meridian Exception Manager</h1>
+      <p class="mtd-02__hero-tagline">From a flat queue to a ranked worklist the team trusts</p>
+      <p class="mtd-02__hero-desc">An AI layer that detects, prioritizes, and proposes remediation for operational exceptions — trade breaks, mismatches, failed reconciliations — presenting them as a ranked, actionable worklist instead of a flat queue. The push/ambient counterpart to the Meridian Research Agent's pull-only design.</p>
+      <blockquote class="mtd-02__hero-quote">"Every exception looked the same until I opened it. I had no way to know what actually mattered."
+        <small>Illustrative — reasoned from discovery interviews, not a verbatim quote</small>
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- 2. Introduction -->
+  <section>
+    <div class="mtd-02__breadcrumb">Introduction<span class="sep"></span>Meridian Exception Manager</div>
+    <div class="mtd-02__intro-grid">
+      <div class="mtd-02__intro-main">
+        <h2>What's Meridian Exception Manager?</h2>
+        <p style="margin-top:16px; font-size:15px;">A system that continuously watches for operational exceptions and surfaces them as a ranked worklist with a visible reason for every flag and a proposed next step — instead of a flat queue an analyst has to triage from scratch. Anonymized composite of real BlackRock work; Anchorpoint Capital and Meridian are fictional stand-ins for the actual client/platform, since that work is current-employer confidential.</p>
+        <h3 style="font-size:16px; margin-top:28px; color:#1a1a1a;">The problems</h3>
+        <ol class="mtd-02__problem-list">
+          <li>Exceptions arrived as a flat queue with no reliable signal for what actually mattered</li>
+          <li>Prioritization depended on tribal knowledge that lived only in experienced analysts' heads</li>
+          <li>High-risk exceptions could sit unworked for hours with nothing distinguishing them from routine ones</li>
+        </ol>
+        <p class="mtd-02__role-note">My role: led the design process for this concept, from contextual interviews with the manual-triage team through shipped v1.</p>
+      </div>
+      <div class="mtd-02__intro-side">
+        <div class="mtd-02__circle">
+          <span class="label">Target audience</span>
+          <ul>
+            <li>Operations analyst (triage mode)</li>
+            <li>Team lead — owns queue prioritization</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Discovery & Research -->
+  <section class="mtd-02__kpi-section" style="background:#fbfbfb;">
+    <div class="mtd-02__breadcrumb">Discovery &amp; Research<span class="sep"></span>Meridian Exception Manager</div>
+    <h2>Why does this matter?</h2>
+    <p class="mtd-02__kpi-sub">Some exceptions carry regulatory implications — a de-prioritized high-risk break isn't just slower resolution, it's real exposure. Figures below are illustrative, reasoned targets; no sourced production measurement exists for this concept.</p>
+    <div class="mtd-02__kpi-row">
+      <div class="mtd-02__kpi">
+        <div class="mtd-02__kpi-num blue">~35%</div>
+        <div class="mtd-02__kpi-label">reduction in average exception time-to-resolution</div>
+        <span class="mtd-02__kpi-flag">illustrative target — not a measured result</span>
+      </div>
+      <div class="mtd-02__kpi">
+        <div class="mtd-02__kpi-num purple">~40%</div>
+        <div class="mtd-02__kpi-label">reduction in aged / unresolved exceptions</div>
+        <span class="mtd-02__kpi-flag">illustrative target — not a measured result</span>
+      </div>
+    </div>
+    <p class="mtd-02__methods"><strong>Discovery methods:</strong> contextual interviews with operations analysts doing manual triage, plus their team lead, focused on capturing the implicit rules experienced staff already used to prioritize a flat queue.</p>
+    <p style="font-size:14px; margin-top:10px;"><strong style="color:#1a1a1a; font-weight:400;">Problem statement:</strong> operational exceptions surfaced through queues and manual triage, so prioritization depended on tribal knowledge of "which ones actually matter."</p>
+  </section>
+
+  <!-- 4. Pain points -->
+  <section>
+    <div class="mtd-02__breadcrumb">Pain Points from Interviews<span class="sep"></span>Meridian Exception Manager</div>
+    <h2 style="font-size:26px;">What we heard</h2>
+    <ol class="mtd-02__pain-list">
+      <li>Exceptions arrived as a flat queue with no reliable signal for what actually mattered</li>
+      <li>Prioritization depended on tribal knowledge; only the most experienced analysts could triage quickly</li>
+      <li>High-risk exceptions could sit unworked for hours because nothing visually distinguished them from routine ones</li>
+      <li>No visibility into why an exception was flagged — analysts re-verified from scratch every time</li>
+      <li>Team leads had no way to confirm prioritization was happening consistently across the team</li>
+    </ol>
+    <blockquote class="mtd-02__callout-quote">"I'd end up re-checking the same thing three different ways just to convince myself it was actually urgent."
+      <small>Illustrative — reasoned from pain point #4, not a verbatim quote</small>
+    </blockquote>
+  </section>
+
+  <!-- 5. Persona card -->
+  <section style="background:#fbfbfb;">
+    <div class="mtd-02__breadcrumb">Persona<span class="sep"></span>Meridian Exception Manager</div>
+    <div class="mtd-02__persona-card">
+      <div class="mtd-02__persona-bar"></div>
+      <div class="mtd-02__persona-top">
+        <div class="mtd-02__persona-photo">Photo<br/>placeholder</div>
+        <div class="mtd-02__persona-meta">
+          <h3>Operations Analyst</h3>
+          <p>Triage mode · same persona as the Meridian Research Agent case study</p>
+        </div>
+      </div>
+      <p class="mtd-02__persona-quote">"Tell me why this matters before you ask me to act on it, and I'll trust the ranking. Just rank it silently and I won't."</p>
+      <div class="mtd-02__persona-cols">
+        <div class="mtd-02__persona-col">
+          <h4>Responsibilities</h4>
+          <ul>
+            <li>Triaging the exception queue</li>
+            <li>Resolving or escalating flagged breaks</li>
+            <li>Distinguishing real issues from noise</li>
+          </ul>
+        </div>
+        <div class="mtd-02__persona-col">
+          <h4>Key challenges</h4>
+          <ul>
+            <li>Alert fatigue from over-flagging</li>
+            <li>No visible reasoning behind past prioritization</li>
+            <li>High-risk items indistinguishable at a glance</li>
+          </ul>
+        </div>
+        <div class="mtd-02__persona-col">
+          <h4>Wishlist</h4>
+          <ul>
+            <li>Ranked worklist, not a flat queue</li>
+            <li>A visible reason on every flag</li>
+            <li>An easy "not an issue" path that changes future behavior</li>
+          </ul>
+        </div>
+      </div>
+      <p class="mtd-02__persona-flag">Sentiment quote and wishlist fields are reasonably inferred from the brief and discovery pain points, not sourced from dedicated persona-sentiment interviews for this concept.</p>
+    </div>
+  </section>
+
+  <!-- 6. Four-column framework -->
+  <section>
+    <div class="mtd-02__breadcrumb">Strategy<span class="sep"></span>Meridian Exception Manager</div>
+    <h2 style="font-size:26px; margin-bottom:6px;">Pain Points + Business Goals + UX Strategy = Feature Set</h2>
+    <div class="mtd-02__framework">
+      <div class="mtd-02__fw-col pp">
+        <h4>Pain Points</h4>
+        <ul>
+          <li>Flat queue, no signal for what matters</li>
+          <li>Prioritization is tribal knowledge</li>
+          <li>No visibility into why something was flagged</li>
+          <li>Aged high-risk exceptions can sit unworked</li>
+        </ul>
+      </div>
+      <div class="mtd-02__fw-col bg">
+        <h4>Business Goals</h4>
+        <ul>
+          <li>Faster exception resolution, fewer missed high-risk breaks</li>
+          <li>Fewer aged/unresolved exceptions</li>
+          <li>Analysts trust the system's prioritization enough to act on it</li>
+        </ul>
+      </div>
+      <div class="mtd-02__fw-col ux">
+        <h4>UX Strategy</h4>
+        <ul>
+          <li>Contextual interviews to capture experienced staff's implicit rules</li>
+          <li>Visible reasoning for every flag, by default</li>
+          <li>Low-friction dismissal path that visibly feeds back into the system</li>
+          <li>Aging made visible, not silent</li>
+        </ul>
+      </div>
+      <div class="mtd-02__fw-col fs">
+        <h4>Feature Set</h4>
+        <ul>
+          <li>Prioritized worklist (ranked, not flat)</li>
+          <li>Proposed-remediation card</li>
+          <li>Workflow states — AI-proposed vs. human-confirmed</li>
+          <li>Aging/escalation indicator + dismissal feedback loop</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Design / Process -->
+  <section style="background:#fbfbfb;">
+    <div class="mtd-02__breadcrumb">Design &amp; Process<span class="sep"></span>Meridian Exception Manager</div>
+    <h2 style="font-size:26px; margin-bottom:24px;">The 8-Stage AI-Enhanced UX Process</h2>
+
+    <div class="mtd-02__process-stage">
+      <h4>1. Discovery &amp; Research</h4>
+      <p class="same"><strong>Same:</strong> contextual interviews with the manual-triage team and their team lead.</p>
+      <p class="new"><strong>New:</strong> mapped what the system could rank with confidence (severity, exposure, recurrence) vs. what needed human judgment (regulatory sensitivity, client context) — and, because this is push/ambient, mapped the analyst's trust baseline toward being <em>told</em> something needs attention vs. being <em>answered</em> on request.</p>
+    </div>
+    <div class="mtd-02__process-stage">
+      <h4>2. Problem Definition / Pain Points</h4>
+      <p class="same"><strong>Same:</strong> synthesized manual-triage pain points into a clear problem statement.</p>
+      <p class="new"><strong>New:</strong> separated "the queue is unranked" (fixable by the system) from "I don't trust being interrupted by an automated flag" (fixable only by interaction design).</p>
+    </div>
+    <div class="mtd-02__process-stage">
+      <h4>3. Competitive / Pattern Analysis</h4>
+      <p class="new"><strong>New:</strong> benchmarked proactive alerting tools (fraud/risk alerting, IT ops incident triage) specifically on how they handle being wrong when pushing something at a user, not just feature parity. Alerts with no visible reason trained users to ignore them within weeks — that became the design bar here.</p>
+    </div>
+    <div class="mtd-02__process-stage">
+      <h4>4. Design Thinking / Ideation</h4>
+      <p class="new"><strong>New:</strong> ideation centered on the system's behavior at the moment it interrupts someone — what it shows when not highly confident, what happens after a dismissal, where "detect and propose" ends and "human must confirm" begins.</p>
+    </div>
+    <div class="mtd-02__process-stage">
+      <h4>5. Design Sprints &amp; Iteration</h4>
+      <p class="same"><strong>Same:</strong> iterative sprints, weekly usability testing.</p>
+      <p class="new"><strong>New:</strong> the earliest version ranked with a bare numeric score; testing showed analysts distrusted it as "another black box," so iteration replaced the score with a plain-language reason shown inline before any click.</p>
+    </div>
+    <div class="mtd-02__process-stage">
+      <h4>6. Usability Testing</h4>
+      <p class="new"><strong>New:</strong> tested whether analysts worked the list top-to-bottom as ranked (trust) or re-sorted it themselves (distrust signal), and deliberately tested the over-flagging failure path, not just the happy path.</p>
+    </div>
+    <div class="mtd-02__process-stage">
+      <h4>7. Delivered Solution</h4>
+      <p class="same"><strong>Same:</strong> shipped v1 with a clear before/after.</p>
+      <p class="new"><strong>New:</strong> continuous detection and ranking, a visible reason and proposed remediation on every item, explicit AI-proposed vs. human-confirmed workflow states, first-class dismissal path feeding back into ranking.</p>
+    </div>
+    <div class="mtd-02__process-stage">
+      <h4>8. Outcomes / Metrics</h4>
+      <p>See Results below — illustrative targets, since no sourced measured figure exists for this concept in the project's files.</p>
+    </div>
+
+    <div class="mtd-02__callout challenge">
+      <h4>Unexpected Challenge</h4>
+      <p>The riskiest early design choice wasn't the ranking algorithm — it was showing a bare priority score with no reason. Testing showed a system pushing an unexplained number is trusted <em>less</em> than a flat, unranked queue, because it reads as a black box deciding for you rather than a tool helping you decide.</p>
+    </div>
+    <div class="mtd-02__callout learn">
+      <h4>What We Learned</h4>
+      <p>Replacing the score with a visible, plain-language reason shown directly on the worklist row — before any click — was the single highest-leverage change in the whole iteration cycle.</p>
+    </div>
+
+    <!-- VISUAL: Exception Worklist screen, from 02-meridian-exception-manager-wireframes.md -->
+    <div class="mtd-02__visual-placeholder">[VISUAL: Exception Worklist screen — ranked list with inline flag reason, workflow state, and aging indicator]</div>
+  </section>
+
+  <!-- 8. Results -->
+  <section class="mtd-02__kpi-section">
+    <div class="mtd-02__breadcrumb">Outcomes<span class="sep"></span>Meridian Exception Manager</div>
+    <h2>Results</h2>
+    <p class="mtd-02__kpi-sub">All figures are illustrative, reasoned targets — no production measurement exists for this concept in the project's source files.</p>
+    <div class="mtd-02__kpi-row">
+      <div class="mtd-02__kpi">
+        <div class="mtd-02__kpi-num blue">~35%</div>
+        <div class="mtd-02__kpi-label">reduction in average exception time-to-resolution</div>
+        <span class="mtd-02__kpi-flag">illustrative target</span>
+      </div>
+      <div class="mtd-02__kpi">
+        <div class="mtd-02__kpi-num purple">~40%</div>
+        <div class="mtd-02__kpi-label">reduction in aged / unresolved exceptions</div>
+        <span class="mtd-02__kpi-flag">illustrative target</span>
+      </div>
+      <div class="mtd-02__kpi">
+        <div class="mtd-02__kpi-num cyan">↓</div>
+        <div class="mtd-02__kpi-label">exceptions manually re-prioritized by a human — the trust signal: fewer means the ranking is trusted, not overridden</div>
+        <span class="mtd-02__kpi-flag">trust-specific illustrative target</span>
+      </div>
+      <div class="mtd-02__kpi">
+        <div class="mtd-02__kpi-num magenta">↓</div>
+        <div class="mtd-02__kpi-label">dismissal-recurrence rate — how often a dismissed false-positive pattern stops recurring</div>
+        <span class="mtd-02__kpi-flag">trust/feedback illustrative target</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Key Insight -->
+  <section class="mtd-02__insight">
+    <div class="mtd-02__breadcrumb" style="text-align:left; max-width:720px; margin:0 auto 20px;">Key Insight<span class="sep"></span>Meridian Exception Manager</div>
+    <blockquote>This is the deliberate push/ambient contrast to Epic 1's pull-only research agent — same platform, same underlying trust-building principle (never surface a conclusion without a visible reason), applied to a completely different interaction mode. Epic 1 has to earn trust when asked a question; Epic 2 has to earn trust while interrupting someone who didn't ask for anything. That's why alert fatigue and false-positive distrust, not accuracy alone, were the core design challenge.</blockquote>
+    <small>Pulled from brief HOW → core design challenge and the discovery doc's Reflection section — the most concrete design-judgment statement in the source material.</small>
+    <!-- VISUAL: Exception Detail — Proposed Remediation Card screen, from 02-meridian-exception-manager-wireframes.md -->
+    <div class="mtd-02__visual-placeholder" style="max-width:620px; margin:28px auto 0;">[VISUAL: Exception Detail — Proposed Remediation Card screen, with AI-proposed vs. human-confirmed states]</div>
+  </section>
+
+  <!-- 10. CTA -->
+  <div class="mtd-02__cta">
+    <h2>Let's talk about AI-native UX</h2>
+    <p>Michael Thibodeau · michaelthbd@yahoo.com · 646 436 2876</p>
+    <a href="mailto:michaelthbd@yahoo.com">Get in touch</a>
+  </div>
+</div>
+
+</body>
+</html>

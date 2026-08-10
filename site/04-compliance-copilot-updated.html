@@ -1,0 +1,375 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Compliance Co-Pilot — AI UX Case Studies</title>
+<link rel="stylesheet" href="../design-system/tokens.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { margin: 0; background: var(--color-bg-white); font-family: var(--font-family-body); }
+
+  .navbar {
+    font-family: var(--font-family-body);
+    background: var(--color-bg-white);
+    border-bottom: 1px solid var(--color-border);
+    padding: var(--space-md) var(--space-xl);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+
+  .navbar-back {
+    text-decoration: none;
+    color: var(--color-text-light);
+    font-size: var(--font-size-body);
+  }
+
+  .navbar-logo { display: flex; align-items: center; gap: var(--space-xs); }
+  .navbar-logo-label { font-size: var(--font-size-eyebrow); color: var(--color-text-secondary); }
+  .navbar-logo-mark { font-size: 16px; color: var(--color-text-light); }
+
+  .detail-wrapper {
+    font-family: var(--font-family-display);
+    color: var(--color-text-primary);
+    max-width: var(--max-width-content);
+    margin: 0 auto;
+  }
+
+  /* ========== HERO/COVER SECTION ========== */
+  .hero {
+    background: var(--color-coral-1);
+    background: linear-gradient(135deg, var(--color-coral-1), var(--color-coral-2) 55%, var(--color-coral-3));
+    padding: var(--space-3xl) var(--space-xl);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-accent-left { position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: var(--color-accent-lime); }
+  .hero-accent-right { position: absolute; left: 6px; top: 0; bottom: 0; width: 14px; background: var(--color-primary); }
+
+  .hero-content { max-width: 640px; margin-left: var(--space-xl); position: relative; z-index: 1; }
+  .hero-eyebrow { font-size: var(--font-size-eyebrow); color: rgba(var(--color-text-white), 0.85); margin-bottom: var(--space-md); }
+  .hero-title { color: var(--color-text-white); font-size: var(--font-size-h1); font-weight: var(--font-weight-light); margin-bottom: var(--space-md); }
+  .hero-subtitle { color: rgba(var(--color-text-white), 0.95); font-size: var(--font-size-body); line-height: var(--line-height-comfortable); }
+  .hero-quote { color: rgba(var(--color-text-white), 0.85); font-style: italic; font-size: 14px; margin-top: var(--space-lg); line-height: var(--line-height-comfortable); }
+  .hero-quote-source { font-size: var(--font-size-micro); opacity: 0.8; }
+
+  /* ========== SECTION STYLING ========== */
+  .section {
+    padding: var(--padding-section);
+  }
+
+  .section.bg-alternate { background: var(--color-bg-gray); }
+
+  .section-eyebrow {
+    font-size: var(--font-size-eyebrow);
+    color: var(--color-text-secondary);
+    margin-bottom: var(--space-md);
+    letter-spacing: var(--letter-spacing-tracked);
+  }
+
+  .section h2 {
+    font-weight: var(--font-weight-light);
+    font-size: var(--font-size-h2);
+    margin: 0 0 var(--space-md);
+  }
+
+  .section h3 {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-h3);
+    margin: 0 0 var(--space-md);
+  }
+
+  .section p {
+    line-height: var(--line-height-comfortable);
+    font-size: var(--font-size-body);
+    margin-bottom: var(--space-lg);
+  }
+
+  /* ========== TARGET AUDIENCE BADGE ========== */
+  .audience-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-diagram-teal);
+    border-radius: var(--radius-full);
+    padding: var(--space-md) var(--space-lg);
+    margin: var(--space-lg) 0;
+  }
+
+  .audience-badge-label { font-size: var(--font-size-micro); font-weight: var(--font-weight-semibold); }
+  .audience-badge-text { font-size: var(--font-size-eyebrow); margin-top: var(--space-xs); }
+
+  /* ========== LISTS ========== */
+  ol {
+    padding-left: var(--space-md);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-comfortable);
+  }
+
+  ol li { margin-bottom: var(--space-md); }
+
+  /* ========== KPI BLOCKS ========== */
+  .kpi-group { display: flex; gap: var(--space-3xl); flex-wrap: wrap; margin: var(--space-lg) 0; }
+
+  .kpi-block { flex: 1; min-width: 120px; }
+  .kpi-number { font-size: 56px; font-weight: var(--font-weight-light); line-height: 1; }
+  .kpi-label { font-size: var(--font-size-micro); color: var(--color-text-secondary); margin-top: var(--space-xs); }
+
+  /* ========== PERSONA CARD ========== */
+  .persona-card {
+    border: var(--border-width) solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-lg);
+    max-width: 560px;
+  }
+
+  .persona-name { font-weight: var(--font-weight-semibold); font-size: var(--font-size-body); }
+  .persona-role { font-size: var(--font-size-micro); color: var(--color-text-secondary); margin-bottom: var(--space-md); }
+  .persona-quote { font-style: italic; font-size: var(--font-size-small); margin-bottom: var(--space-md); }
+  .persona-note { font-size: var(--font-size-micro); color: var(--color-text-secondary); }
+
+  .persona-details { display: flex; gap: var(--space-lg); margin-top: var(--space-lg); flex-wrap: wrap; }
+  .persona-detail-group { flex: 1; min-width: 160px; }
+  .persona-detail-label { font-size: var(--font-size-micro); font-weight: var(--font-weight-semibold); }
+  .persona-detail-text { font-size: var(--font-size-micro); color: var(--color-text-secondary); margin-top: var(--space-xs); }
+
+  /* ========== FOUR-COLUMN FRAMEWORK ========== */
+  .framework {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    margin: var(--space-lg) 0;
+  }
+
+  .framework-col {
+    padding: var(--space-md);
+    font-size: var(--font-size-micro);
+    line-height: var(--line-height-normal);
+  }
+
+  .framework-col b { display: block; margin-bottom: var(--space-md); }
+
+  .framework-pain { background: var(--color-pain-points); color: var(--color-text-white); }
+  .framework-goals { background: var(--color-business-goals); color: var(--color-text-active); }
+  .framework-strategy { background: var(--color-ux-strategy); color: var(--color-text-white); }
+  .framework-feature { background: var(--color-feature-set); color: var(--color-text-white); }
+
+  /* ========== CALLOUT BOXES ========== */
+  .callout {
+    padding: var(--space-md) var(--space-lg);
+    border-radius: var(--radius-md);
+    margin-top: var(--space-lg);
+    border-left: 4px solid;
+  }
+
+  .callout-learning { background: var(--color-learning-box); border-left-color: var(--color-learning-accent); }
+  .callout-learning b { color: var(--color-learning-accent); }
+
+  .callout-challenge { background: var(--color-challenge-box); border-left-color: var(--color-challenge-accent); }
+  .callout-challenge b { color: var(--color-challenge-accent); }
+
+  .callout b { font-size: var(--font-size-small); display: block; margin-bottom: var(--space-sm); }
+  .callout p { font-size: var(--font-size-small); margin: var(--space-sm) 0 0; }
+
+  /* ========== KEY INSIGHT SECTION ========== */
+  .insight-section {
+    background: var(--color-primary);
+    color: var(--color-text-white);
+  }
+
+  .insight-section h3 { color: var(--color-text-white); }
+  .insight-quote { font-size: 17px; font-style: italic; line-height: var(--line-height-comfortable); }
+
+  /* ========== CTA SECTION ========== */
+  .cta-section {
+    background: linear-gradient(135deg, var(--color-coral-1), var(--color-coral-2) 55%, var(--color-coral-3));
+    text-align: center;
+  }
+
+  .cta-section h3 { color: var(--color-text-white); }
+  .cta-section p { color: rgba(var(--color-text-white), 0.95); }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 768px) {
+    .section { padding: var(--padding-section-mobile); }
+    .framework { grid-template-columns: 1fr; }
+    .kpi-group { gap: var(--space-2xl); }
+    .hero { padding: var(--space-2xl) var(--space-md); }
+    .hero-content { margin-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+  <a href="index.html" class="navbar-back">← All case studies</a>
+  <div class="navbar-logo">
+    <span class="navbar-logo-label">michael</span>
+    <span class="navbar-logo-mark">thibodea(UX)</span>
+  </div>
+</div>
+
+<div class="detail-wrapper">
+
+  <!-- 1. HERO/COVER -->
+  <div class="hero">
+    <div class="hero-accent-left"></div>
+    <div class="hero-accent-right"></div>
+    <div class="hero-content">
+      <div class="hero-eyebrow">Concept / speculative · Credit Suisse — extends the real OBI case study</div>
+      <h2 class="hero-title">Compliance Co-Pilot</h2>
+      <p class="hero-subtitle">A concept where a research agent, a policy-check agent, and an escalation agent handle parts of submission review — with every action visible on a timestamped trail.</p>
+      <p class="hero-quote">
+        "I never know why my submission is stuck, or who's actually looking at it."<br>
+        <span class="hero-quote-source">(illustrative — not a verbatim quote)</span>
+      </p>
+    </div>
+  </div>
+
+  <!-- 2. INTRODUCTION -->
+  <div class="section">
+    <div class="section-eyebrow">Introduction</div>
+    <h2>What's Compliance Co-Pilot?</h2>
+    <p>A concept extending Michael's real Credit Suisse Outside Business Interests (OBI) work: three specialized agents handle context-gathering, policy-conflict flagging, and escalation routing, instead of purely manual step-by-step review.</p>
+    <div class="audience-badge">
+      <div>
+        <div class="audience-badge-label">Target audience</div>
+        <div class="audience-badge-text">Risk &amp; Compliance manager</div>
+      </div>
+    </div>
+    <h3 style="margin-top: var(--space-lg);">The problems</h3>
+    <ol>
+      <li>Submissions returned for missing information, with no clear explanation</li>
+      <li>No visibility into where a submission is in the review pipeline or why</li>
+      <li>No consolidated view of a submitter's disclosure history for judgment calls</li>
+    </ol>
+    <p style="font-size: var(--font-size-micro); color: var(--color-text-secondary);">Extends design and discovery work from Michael's real Credit Suisse OBI case study into this forward-looking multi-agent concept.</p>
+  </div>
+
+  <!-- 3. DISCOVERY & RESEARCH -->
+  <div class="section bg-alternate">
+    <div class="section-eyebrow">Discovery &amp; Research</div>
+    <h2>Why does this matter?</h2>
+    <div class="kpi-group">
+      <div class="kpi-block">
+        <div class="kpi-number" style="color: var(--color-kpi-blue);">~40<span style="font-size: 20px;">%</span></div>
+        <div class="kpi-label">of OBI submissions returned for missing info (illustrative baseline)</div>
+      </div>
+    </div>
+    <p>Discovery methods (real, carried over from the OBI engagement): interviews with Risk &amp; Compliance managers and Submitter/Employee personas.</p>
+  </div>
+
+  <!-- 4. PAIN POINTS -->
+  <div class="section">
+    <h3>Pain points from interviews</h3>
+    <ol>
+      <li>Submissions returned for missing information, with no clear explanation</li>
+      <li>No visibility into where a submission is in the review pipeline or why</li>
+      <li>No consolidated view of a submitter's disclosure history for judgment calls</li>
+    </ol>
+    <p style="font-style: italic; color: var(--color-text-secondary);">
+      "It's a black box. I submit, then I wait, and I don't know what's happening in between."<br>
+      <span style="font-size: var(--font-size-micro);">(illustrative — not a verbatim quote)</span>
+    </p>
+  </div>
+
+  <!-- 5. PERSONA CARD -->
+  <div class="section bg-alternate">
+    <h3>Persona</h3>
+    <div class="persona-card">
+      <div class="persona-name">Risk &amp; Compliance Manager</div>
+      <div class="persona-role">Primary persona, Credit Suisse OBI workflow</div>
+      <p class="persona-quote">"I need to trust the system's recommendation, not just accept it — show me why."</p>
+      <p class="persona-note">(illustrative sentiment — reasonably inferred from brief WHO/WHAT, not a sourced verbatim)</p>
+      <div class="persona-details">
+        <div class="persona-detail-group">
+          <div class="persona-detail-label">Key challenges</div>
+          <div class="persona-detail-text">Opacity of automated flags; re-verifying findings with no visible reasoning</div>
+        </div>
+        <div class="persona-detail-group">
+          <div class="persona-detail-label">Wishlist</div>
+          <div class="persona-detail-text">Visible reasoning trail; override without losing the audit record</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. FOUR-COLUMN FRAMEWORK -->
+  <div class="section">
+    <h3>Pain Points + Business Goals + UX Strategy = Feature Set</h3>
+    <div class="framework">
+      <div class="framework-col framework-pain">
+        <b>Pain Points</b>
+        Returned w/ no explanation · No pipeline visibility · No disclosure history view
+      </div>
+      <div class="framework-col framework-goals">
+        <b>Business Goals</b>
+        Faster, more consistent review with a clear audit trail
+      </div>
+      <div class="framework-col framework-strategy">
+        <b>UX Strategy</b>
+        Extend real OBI findings · Agent proposes, human confirms · Visible activity trail
+      </div>
+      <div class="framework-col framework-feature">
+        <b>Feature Set</b>
+        Research, policy-check &amp; escalation agents · Activity trail · Policy linking · Override + log
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. DESIGN/PROCESS -->
+  <div class="section bg-alternate">
+    <h3>Design / Process</h3>
+    <p><b>Discovery &amp; Research</b> — real interviews carried over from OBI. New: mapped which parts of the workflow are agent-automatable vs. requiring human compliance judgment.</p>
+    <p><b>Design Thinking &amp; Ideation</b> — centered on agent behavior: what each agent surfaces, how conflicting outputs are shown, where agent-proposes/human-confirms sits.</p>
+    <p><b>Design Sprints &amp; Iteration / Usability Testing</b> — not yet run; this is a concept/vision piece, no fabricated test results are presented.</p>
+    <div class="callout callout-challenge">
+      <b>Unexpected challenge</b>
+      <p>The hardest open question isn't agent accuracy — it's whether reviewers will trust a workflow where three different agents can each touch one case.</p>
+    </div>
+  </div>
+
+  <!-- 8. RESULTS -->
+  <div class="section">
+    <h3>Results (targets, not measured)</h3>
+    <div class="kpi-group">
+      <div class="kpi-block">
+        <div class="kpi-number" style="color: var(--color-kpi-blue);">~30<span style="font-size: 16px;">%</span></div>
+        <div class="kpi-label">faster review cycle (target)</div>
+      </div>
+      <div class="kpi-block">
+        <div class="kpi-number" style="color: var(--color-kpi-magenta);">~50<span style="font-size: 16px;">%</span></div>
+        <div class="kpi-label">fewer missing-info returns (target)</div>
+      </div>
+      <div class="kpi-block">
+        <div class="kpi-number" style="color: var(--color-kpi-cyan);">≥80<span style="font-size: 16px;">%</span></div>
+        <div class="kpi-label">reviewer trust target</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. KEY INSIGHT -->
+  <div class="section insight-section">
+    <h3>Key Insight</h3>
+    <p class="insight-quote">"When more than one agent can act on a case, the UX problem shifts from 'is the AI right' to 'can the user tell who did what and why.' The activity trail isn't a feature bolted onto the workflow — it's the design's answer to that question."</p>
+  </div>
+
+  <!-- 10. CTA -->
+  <div class="section cta-section">
+    <h3>Interested in the full process?</h3>
+    <p>Get in touch — michaelthbd@yahoo.com</p>
+  </div>
+
+</div>
+
+</body>
+</html>

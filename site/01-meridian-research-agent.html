@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meridian Research Agent — AI UX Case Studies</title>
+</head>
+<body style="margin:0;background:#fff;">
+<div style="font-family:-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif;background:#fff;border-bottom:1px solid #E5E5E5;padding:16px 32px;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:10;">
+  <a href="index.html" style="text-decoration:none;color:#4A4A4A;font-size:14px;">&larr; All case studies</a>
+  <div><span style="font-size:12px;color:#8A8A8A;">michael</span><span style="font-size:16px;color:#4A4A4A;">thibodea(UX)</span></div>
+</div>
+<div class="cc-detail" style="--rust:#D54E2B;--coral1:#F5805C;--coral2:#FF8C7A;--coral3:#FFB088;--lime:#BFFD20;--body:#4A4A4A;--label:#8A8A8A;--line:#E5E5E5;--blue:#1059FF;--purple:#AF00EF;--cyan:#00BCD9;--magenta:#FF40F4;--pain:#DF505C;--goals:#8AD9F8;--strategy:#41854F;--feature:#7C417E;--persona:#A6DF85;font-family:'Poppins','Century Gothic','Futura',sans-serif;color:var(--body);max-width:900px;margin:0 auto;">
+
+  <style>
+    .cc-detail h2{font-weight:300;font-size:28px;margin:0 0 6px;}
+    .cc-detail h3{font-weight:600;font-size:16px;margin:0 0 10px;}
+    .cc-detail p{line-height:1.6;font-size:15px;}
+    .cc-detail .cc-eyebrow{font-size:12px;color:var(--label);margin-bottom:8px;letter-spacing:.03em;}
+    .cc-detail .cc-section{padding:48px 32px;}
+    @media (max-width:768px){
+      .cc-detail .cc-cols{flex-direction:column !important;}
+      .cc-detail .cc-4col{grid-template-columns:1fr !important;}
+      .cc-detail .cc-section{padding:32px 20px !important;}
+    }
+  </style>
+
+  <!-- 1. Cover/Hero -->
+  <div style="background:linear-gradient(135deg,var(--coral1),var(--coral2) 55%,var(--coral3));padding:64px 32px;position:relative;overflow:hidden;">
+    <div style="position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--lime);"></div>
+    <div style="position:absolute;left:6px;top:0;bottom:0;width:14px;background:var(--rust);"></div>
+    <div style="max-width:640px;margin-left:40px;">
+      <div style="font-size:12px;color:rgba(255,255,255,.85);margin-bottom:10px;">Real, shipped v1 · Anchorpoint Capital / Meridian</div>
+      <h2 style="color:#fff;font-size:38px;">Meridian Research Agent</h2>
+      <p style="color:rgba(255,255,255,.95);font-size:16px;">Analysts used to manually cross-reference five-plus internal systems to investigate a discrepancy. The agent now takes a plain-language question and returns a cited, confidence-scored answer.</p>
+      <p style="color:rgba(255,255,255,.85);font-style:italic;font-size:14px;margin-top:20px;">"I'd have four systems open just to answer one question — and I still wasn't sure I had the full picture."<br><span style="font-size:11px;opacity:.8;">(illustrative — not a verbatim quote)</span></p>
+    </div>
+  </div>
+
+  <!-- 2. Introduction -->
+  <div class="cc-section">
+    <div class="cc-eyebrow">Introduction</div>
+    <h2>What's the Meridian Research Agent?</h2>
+    <p>A conversational agent embedded in Meridian, Anchorpoint Capital's investment operations platform, that retrieves, synthesizes, and cites answers to plain-language research questions.</p>
+    <div style="display:inline-flex;align-items:center;justify-content:center;background:#66E3DA;border-radius:999px;padding:16px 26px;margin:20px 0;">
+      <div style="text-align:center;">
+        <div style="font-size:11px;font-weight:600;">Target audience</div>
+        <div style="font-size:13px;">Investment operations analyst</div>
+      </div>
+    </div>
+    <h3 style="margin-top:24px;">The problems</h3>
+    <ol style="padding-left:18px;font-size:14px;line-height:1.8;">
+      <li>Manually opening 4-5 systems for a single research question</li>
+      <li>No consistent starting point — every analyst improvises their own process</li>
+      <li>No way to show your work after the fact — answers aren't auditable</li>
+      <li>Repetitive, low-judgment lookups take the same time as genuinely hard investigations</li>
+    </ol>
+    <p style="font-size:13px;color:var(--label);">Led the design process for this concept, from discovery interviews through the shipped v1 experience.</p>
+  </div>
+
+  <!-- 3. Discovery & Research KPI -->
+  <div class="cc-section" style="background:#FAFAFA;">
+    <div class="cc-eyebrow">Discovery &amp; Research</div>
+    <h2>Why build this?</h2>
+    <div style="display:flex;gap:48px;flex-wrap:wrap;margin:28px 0;">
+      <div><div style="font-size:56px;color:var(--blue);line-height:1;">~45<span style="font-size:20px;"> min</span></div><div style="font-size:13px;color:var(--label);">saved per investigation workflow (real, sourced)</div></div>
+    </div>
+    <p style="font-size:14px;">Discovery methods: interviews with investment operations analysts across experience levels, plus their team lead; the manual workflow was mapped step by step to see where time actually went.</p>
+  </div>
+
+  <!-- 4. Pain points -->
+  <div class="cc-section">
+    <h3>Pain points from interviews</h3>
+    <ol style="padding-left:18px;font-size:14px;line-height:1.8;">
+      <li>Manually opening 4-5 systems for a single research question</li>
+      <li>No consistent starting point across analysts</li>
+      <li>No way to show your work after the fact — answers aren't auditable</li>
+      <li>Repetitive lookups take as long as genuinely hard investigations</li>
+    </ol>
+    <p style="font-style:italic;font-size:14px;color:var(--label);">"If I can't show where an answer came from, I can't actually use it in a regulated environment."<br><span style="font-size:11px;">(illustrative — not a verbatim quote)</span></p>
+  </div>
+
+  <!-- 5. Persona card -->
+  <div class="cc-section" style="background:#FAFAFA;">
+    <h3>Persona</h3>
+    <div style="border:1px solid var(--line);border-radius:12px;padding:24px;max-width:560px;">
+      <div style="font-weight:600;font-size:15px;">Investment Operations Analyst</div>
+      <div style="font-size:12px;color:var(--label);margin-bottom:12px;">Mid-to-senior level, Anchorpoint Capital</div>
+      <p style="font-style:italic;font-size:13px;">"Detail-oriented and default-skeptical of anything I can't verify."</p>
+      <p style="font-size:12px;color:var(--label);margin:4px 0 0;">(grounded in a real discovery finding — this became the central design constraint)</p>
+      <div style="display:flex;gap:24px;margin-top:16px;flex-wrap:wrap;">
+        <div><div style="font-size:12px;font-weight:600;">Key challenges</div><div style="font-size:12px;color:var(--label);">Assembling context across systems; producing auditable answers</div></div>
+        <div><div style="font-size:12px;font-weight:600;">Wishlist</div><div style="font-size:12px;color:var(--label);">A verifiable answer, faster, without sacrificing traceability</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Four-column framework -->
+  <div class="cc-section">
+    <h3>Pain Points + Business Goals + UX Strategy = Feature Set</h3>
+    <div class="cc-4col" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;border-radius:10px;overflow:hidden;">
+      <div style="background:var(--pain);color:#fff;padding:18px;font-size:12px;line-height:1.6;"><b style="display:block;margin-bottom:8px;">Pain Points</b>4-5 systems per question · No consistent process · Unauditable answers</div>
+      <div style="background:var(--goals);color:#1a1a1a;padding:18px;font-size:12px;line-height:1.6;"><b style="display:block;margin-bottom:8px;">Business Goals</b>Reduce time-to-resolution · Consistent, trustworthy answers</div>
+      <div style="background:var(--strategy);color:#fff;padding:18px;font-size:12px;line-height:1.6;"><b style="display:block;margin-bottom:8px;">UX Strategy</b>Show sources by default · Signal confidence always · Explicit human-gate boundary</div>
+      <div style="background:var(--feature);color:#fff;padding:18px;font-size:12px;line-height:1.6;"><b style="display:block;margin-bottom:8px;">Feature Set</b>Query input · Cited answers · Confidence signal · Show-your-work expand</div>
+    </div>
+  </div>
+
+  <!-- 7. Design/Process -->
+  <div class="cc-section" style="background:#FAFAFA;">
+    <h3>Design / Process</h3>
+    <p style="font-size:14px;"><b>Discovery &amp; Research</b> — real interviews with analysts and their team lead. New in AI-native version: mapped what data sources could plausibly answer with confidence vs. requiring human judgment.</p>
+    <p style="font-size:14px;"><b>Design Thinking &amp; Ideation</b> — centered on agent behavior before any screen: what happens when it's uncertain, when a user corrects it, where the hand-off line sits.</p>
+    <p style="font-size:14px;"><b>Design Sprints &amp; Iteration</b> — real, iterative sprints with weekly usability testing.</p>
+    <p style="font-size:14px;"><b>Usability Testing</b> — tested the happy path and failure path as equally important; watched whether analysts verified sources unprompted.</p>
+    <div style="background:#E8F5E9;border-left:4px solid var(--strategy);padding:16px 20px;border-radius:6px;margin-top:16px;">
+      <b style="font-size:13px;color:var(--strategy);">What we learned</b>
+      <p style="font-size:13px;margin:6px 0 0;">Early versions surfaced confidence only when the agent flagged low confidence itself. Testing showed analysts trusted the agent <i>more</i> when confidence was shown on every answer.</p>
+    </div>
+    <!-- VISUAL: Answer View screen, from 01-meridian-research-agent-wireframes.md -->
+  </div>
+
+  <!-- 8. Results -->
+  <div class="cc-section">
+    <h3>Results</h3>
+    <div style="display:flex;gap:40px;flex-wrap:wrap;">
+      <div><div style="font-size:44px;color:var(--blue);">~45<span style="font-size:16px;"> min</span></div><div style="font-size:12px;color:var(--label);">saved per workflow (real)</div></div>
+      <div><div style="font-size:44px;color:var(--purple);">~82<span style="font-size:16px;">%</span></div><div style="font-size:12px;color:var(--label);">answer acceptance (est.)</div></div>
+      <div><div style="font-size:44px;color:var(--cyan);">~12<span style="font-size:16px;">%</span></div><div style="font-size:12px;color:var(--label);">escalation rate (est., healthy signal)</div></div>
+      <div><div style="font-size:44px;color:var(--magenta);">~6<span style="font-size:16px;">%</span></div><div style="font-size:12px;color:var(--label);">repeat-question rate (est.)</div></div>
+    </div>
+  </div>
+
+  <!-- 9. Key Insight -->
+  <div class="cc-section" style="background:var(--rust);color:#fff;">
+    <h3 style="color:#fff;">Key Insight</h3>
+    <p style="font-size:17px;font-style:italic;line-height:1.6;">"The core design challenge wasn't making the agent accurate — it was getting a skeptical, detail-oriented analyst to actually act on an AI answer. Citations weren't an add-on; the citation was part of the answer."</p>
+    <!-- VISUAL: Source Detail Expand screen, from 01-meridian-research-agent-wireframes.md -->
+  </div>
+
+  <!-- 10. CTA -->
+  <div class="cc-section" style="background:linear-gradient(135deg,var(--coral1),var(--coral2) 55%,var(--coral3));text-align:center;">
+    <h3 style="color:#fff;">Interested in the full process?</h3>
+    <p style="color:rgba(255,255,255,.95);">Get in touch — michaelthbd@yahoo.com</p>
+  </div>
+</div>
+
+</body>
+</html>

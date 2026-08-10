@@ -1,0 +1,140 @@
+{
+  "global": {
+    "color": {
+      "brand": {
+        "rust": { "value": "#C1592E", "type": "color" },
+        "coral": { "value": "#FF7E63", "type": "color" },
+        "coral-light": { "value": "#FFB088", "type": "color" },
+        "coral-warm": { "value": "#FF9966", "type": "color" }
+      },
+      "accent": {
+        "teal": { "value": "#1B9E96", "type": "color" },
+        "green": { "value": "#3CAA6E", "type": "color" },
+        "red": { "value": "#D9534F", "type": "color" },
+        "blue": { "value": "#3B9FD4", "type": "color" },
+        "purple": { "value": "#7B5AA6", "type": "color" },
+        "magenta": { "value": "#C23B8F", "type": "color" },
+        "lime": { "value": "#C4E538", "type": "color" }
+      },
+      "neutral": {
+        "text-primary": { "value": "#2B2B2B", "type": "color" },
+        "text-secondary": { "value": "#6E6E6E", "type": "color" },
+        "background": { "value": "#FFFFFF", "type": "color" },
+        "white": { "value": "#FFFFFF", "type": "color" }
+      }
+    },
+    "typography": {
+      "display-cover-title": {
+        "value": {
+          "fontFamily": "Poppins",
+          "fontWeight": "Light",
+          "fontSize": "64",
+          "lineHeight": "110%",
+          "letterSpacing": "0%"
+        },
+        "type": "typography"
+      },
+      "display-section-divider": {
+        "value": {
+          "fontFamily": "Poppins",
+          "fontWeight": "Light",
+          "fontSize": "48",
+          "lineHeight": "115%",
+          "letterSpacing": "0%"
+        },
+        "type": "typography"
+      },
+      "heading-h1": {
+        "value": {
+          "fontFamily": "Poppins",
+          "fontWeight": "Regular",
+          "fontSize": "32",
+          "lineHeight": "120%",
+          "letterSpacing": "0%"
+        },
+        "type": "typography"
+      },
+      "heading-h2": {
+        "value": {
+          "fontFamily": "Poppins",
+          "fontWeight": "Regular",
+          "fontSize": "22",
+          "lineHeight": "125%",
+          "letterSpacing": "0%"
+        },
+        "type": "typography"
+      },
+      "stat-kpi-number": {
+        "value": {
+          "fontFamily": "Poppins",
+          "fontWeight": "Light",
+          "fontSize": "56",
+          "lineHeight": "105%",
+          "letterSpacing": "0%"
+        },
+        "type": "typography"
+      },
+      "body-default": {
+        "value": {
+          "fontFamily": "Poppins",
+          "fontWeight": "Regular",
+          "fontSize": "16",
+          "lineHeight": "140%",
+          "letterSpacing": "0%"
+        },
+        "type": "typography"
+      },
+      "body-small": {
+        "value": {
+          "fontFamily": "Poppins",
+          "fontWeight": "Regular",
+          "fontSize": "13",
+          "lineHeight": "140%",
+          "letterSpacing": "0%"
+        },
+        "type": "typography"
+      },
+      "label-breadcrumb": {
+        "value": {
+          "fontFamily": "Poppins",
+          "fontWeight": "Regular",
+          "fontSize": "12",
+          "lineHeight": "130%",
+          "letterSpacing": "2%"
+        },
+        "type": "typography"
+      },
+      "label-stat-caption": {
+        "value": {
+          "fontFamily": "Poppins",
+          "fontWeight": "Regular",
+          "fontSize": "13",
+          "lineHeight": "130%",
+          "letterSpacing": "0%"
+        },
+        "type": "typography"
+      },
+      "quote-pull-quote": {
+        "value": {
+          "fontFamily": "Poppins",
+          "fontWeight": "Light Italic",
+          "fontSize": "20",
+          "lineHeight": "140%",
+          "letterSpacing": "0%"
+        },
+        "type": "typography"
+      }
+    },
+    "spacing": {
+      "base-unit": { "value": "8", "type": "spacing" },
+      "slide-margin-desktop": { "value": "64", "type": "spacing" },
+      "slide-margin-mobile": { "value": "24", "type": "spacing" },
+      "gutter-major": { "value": "32", "type": "spacing" },
+      "gutter-minor": { "value": "16", "type": "spacing" }
+    }
+  },
+  "$themes": [],
+  "$metadata": {
+    "tokenSetOrder": ["global"]
+  }
+}

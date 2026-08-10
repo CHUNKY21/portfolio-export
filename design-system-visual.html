@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thibodea(UX) — Design System Visual Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400&family=Caveat:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Poppins', sans-serif; color: #2B2B2B; background: #fff; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 32px 100px; }
+  h1.page-title {
+    font-size: 30px; font-weight: 700; padding: 50px 0 6px;
+  }
+  .page-sub { font-size: 14px; color: #8A8A8A; margin-bottom: 40px; }
+  h2.section-title {
+    font-size: 13px; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+    color: #C1592E; margin-top: 56px; margin-bottom: 20px; border-bottom: 2px solid #F2F2F2; padding-bottom: 10px;
+  }
+  .swatch-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+  .swatch { border: 1px solid #E5E5E5; border-radius: 6px; overflow: hidden; }
+  .swatch-color { height: 90px; }
+  .swatch-info { padding: 12px 14px; }
+  .swatch-name { font-size: 13px; font-weight: 700; }
+  .swatch-hex { font-size: 12px; color: #8A8A8A; margin-top: 2px; font-family: monospace; }
+  .swatch-usage { font-size: 11px; color: #8A8A8A; margin-top: 6px; line-height: 1.4; }
+  .inferred-flag { display: inline-block; font-size: 10px; color: #C1592E; font-weight: 700; margin-top: 4px; }
+
+  .type-row { display: flex; align-items: baseline; gap: 24px; padding: 18px 0; border-bottom: 1px solid #F2F2F2; }
+  .type-meta { width: 190px; flex-shrink: 0; font-size: 12px; color: #8A8A8A; }
+  .type-meta strong { display: block; color: #2B2B2B; font-size: 13px; }
+  .type-sample { color: #2B2B2B; }
+
+  .spacing-row { display: flex; align-items: center; gap: 16px; padding: 10px 0; }
+  .spacing-label { width: 140px; font-size: 12px; color: #8A8A8A; font-family: monospace; }
+  .spacing-bar { background: #C1592E; height: 16px; }
+
+  .radius-grid { display: flex; gap: 24px; flex-wrap: wrap; }
+  .radius-sample { width: 100px; height: 100px; background: #F2F2F2; border: 2px solid #C1592E; display: flex; align-items: center; justify-content: center; font-size: 11px; text-align: center; color: #8A8A8A; }
+
+  .shadow-grid { display: flex; gap: 32px; flex-wrap: wrap; }
+  .shadow-sample { width: 160px; height: 100px; background: #fff; display: flex; align-items: center; justify-content: center; font-size: 11px; color: #8A8A8A; border-radius: 6px; }
+
+  .flag-note {
+    background: #FFF7ED; border-left: 3px solid #C1592E; padding: 12px 16px; font-size: 12px; color: #6b4a30; margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1 class="page-title">Thibodea(UX) — Design System</h1>
+  <p class="page-sub">Pixel-accurate extraction from the live site. Values flagged "inferred" were not directly visible in source screenshots — confirm before shipping.</p>
+
+  <h2 class="section-title">Color — Primary</h2>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#C1592E;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">primary</div>
+        <div class="swatch-hex">#C1592E</div>
+        <div class="swatch-usage">Top nav bar background only — the brand anchor.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#F4967D;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">primary-light</div>
+        <div class="swatch-hex">#F4967D</div>
+        <div class="swatch-usage">Hero gradient endpoint (coral). Gradients only.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#8F401F;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">primary-dark</div>
+        <div class="swatch-hex">#8F401F</div>
+        <div class="swatch-usage">Pressed state, if buttons are introduced.</div>
+        <div class="inferred-flag">INFERRED</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Color — Secondary & Accent</h2>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#1E2A6E;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">secondary</div>
+        <div class="swatch-hex">#1E2A6E</div>
+        <div class="swatch-usage">Hero statement headline text only.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#E91E8C;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">accent</div>
+        <div class="swatch-hex">#E91E8C</div>
+        <div class="swatch-usage">Footer background — once per page.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#4FBFB0;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">accent-diagram-teal</div>
+        <div class="swatch-hex">#4FBFB0</div>
+        <div class="swatch-usage">Flow diagram start-node only.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#B4D468;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">accent-diagram-lime</div>
+        <div class="swatch-hex">#B4D468</div>
+        <div class="swatch-usage">Flow diagram decision-node only.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#7CB87C;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">accent-diagram-green</div>
+        <div class="swatch-hex">#7CB87C</div>
+        <div class="swatch-usage">Flow diagram process-step nodes only.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Color — Semantic</h2>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#7CB87C;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">success</div>
+        <div class="swatch-hex">#7CB87C</div>
+        <div class="swatch-usage">Reuse of diagram-green for future positive states.</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#B4D468;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">warning</div>
+        <div class="swatch-hex">#B4D468</div>
+        <div class="swatch-usage">Not currently used semantically on the site.</div>
+        <div class="inferred-flag">INFERRED</div>
+      </div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#D9534F;"></div>
+      <div class="swatch-info">
+        <div class="swatch-name">error</div>
+        <div class="swatch-hex">#D9534F</div>
+        <div class="swatch-usage">Not present on current site — carried from related PDF system.</div>
+        <div class="inferred-flag">INFERRED — CONFIRM FIRST</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Color — Neutrals</h2>
+  <div class="swatch-grid">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FFFFFF; border-bottom:1px solid #eee;"></div>
+      <div class="swatch-info"><div class="swatch-name">neutral-50</div><div class="swatch-hex">#FFFFFF</div><div class="swatch-usage">Primary page background.</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#F2F2F2;"></div>
+      <div class="swatch-info"><div class="swatch-name">neutral-100</div><div class="swatch-hex">#F2F2F2</div><div class="swatch-usage">Section backgrounds — work grid, case study layout.</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#E5E5E5;"></div>
+      <div class="swatch-info"><div class="swatch-name">neutral-200</div><div class="swatch-hex">#E5E5E5</div><div class="swatch-usage">Borders, dividers.</div><div class="inferred-flag">INFERRED</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#ADADAD;"></div>
+      <div class="swatch-info"><div class="swatch-name">neutral-400</div><div class="swatch-hex">#ADADAD</div><div class="swatch-usage">Placeholder / disabled states.</div><div class="inferred-flag">INFERRED</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#8A8A8A;"></div>
+      <div class="swatch-info"><div class="swatch-name">neutral-600</div><div class="swatch-hex">#8A8A8A</div><div class="swatch-usage">Secondary/inactive text — inactive sidebar links.</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#2B2B2B;"></div>
+      <div class="swatch-info"><div class="swatch-name">neutral-900</div><div class="swatch-hex">#2B2B2B</div><div class="swatch-usage">Primary text and headings.</div></div>
+    </div>
+  </div>
+
+  <h2 class="section-title">Typography</h2>
+
+  <div class="type-row">
+    <div class="type-meta"><strong>display</strong>34px / 400 / 150%</div>
+    <div class="type-sample" style="font-size:34px; font-weight:400; line-height:1.5;">i'm a ux leader</div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta"><strong>h1</strong>28px / 700 / 120%</div>
+    <div class="type-sample" style="font-size:28px; font-weight:700;">AMEX MOCA</div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta"><strong>h2 (Caveat)</strong>30px / 400 / 120%</div>
+    <div class="type-sample" style="font-family:'Caveat',cursive; font-size:30px;">The Work</div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta"><strong>h3</strong>16px / 400 italic / 140%</div>
+    <div class="type-sample" style="font-size:16px; font-style:italic;">Redesign and development process for desktop-based application</div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta"><strong>h4</strong>13px / 700 / tracked</div>
+    <div class="type-sample" style="font-size:13px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase;">The Problem</div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta"><strong>body</strong>15px / 400 / 170%</div>
+    <div class="type-sample" style="font-size:15px; line-height:1.7;">Our internal Business Partners don't have a tool to budget their advertising dollars effectively.</div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta"><strong>small</strong>13px / 400 / 140%</div>
+    <div class="type-sample" style="font-size:13px;">UBSAdviceAdvantage</div>
+  </div>
+  <div class="type-row">
+    <div class="type-meta"><strong>micro</strong>12px / 400 / tracked</div>
+    <div class="type-sample" style="font-size:12px; letter-spacing:2.5px; text-transform:uppercase;">Brooklyn, USA</div>
+  </div>
+
+  <h2 class="section-title">Spacing Scale</h2>
+  <div class="spacing-row"><div class="spacing-label">space-xs · 4px</div><div class="spacing-bar" style="width:4px;"></div></div>
+  <div class="spacing-row"><div class="spacing-label">space-sm · 8px</div><div class="spacing-bar" style="width:8px;"></div></div>
+  <div class="spacing-row"><div class="spacing-label">space-md · 16px</div><div class="spacing-bar" style="width:16px;"></div></div>
+  <div class="spacing-row"><div class="spacing-label">space-lg · 24px</div><div class="spacing-bar" style="width:24px;"></div></div>
+  <div class="spacing-row"><div class="spacing-label">space-xl · 40px</div><div class="spacing-bar" style="width:40px;"></div></div>
+  <div class="spacing-row"><div class="spacing-label">space-2xl · 64px</div><div class="spacing-bar" style="width:64px;"></div></div>
+  <div class="spacing-row"><div class="spacing-label">space-3xl · 90px</div><div class="spacing-bar" style="width:90px;"></div></div>
+  <div class="spacing-row"><div class="spacing-label">space-4xl · 120px</div><div class="spacing-bar" style="width:120px;"></div></div>
+
+  <h2 class="section-title">Border Radius</h2>
+  <div class="radius-grid">
+    <div class="radius-sample" style="border-radius:2px;">radius-sm<br>2px</div>
+    <div class="radius-sample" style="border-radius:4px;">radius-md<br>4px<br>(inferred)</div>
+    <div class="radius-sample" style="border-radius:8px;">radius-lg<br>8px<br>(inferred)</div>
+    <div class="radius-sample" style="border-radius:999px;">radius-full<br>999px</div>
+  </div>
+  <div class="flag-note">The live site is flat — no bordered cards observed. radius-md and radius-lg are reserved for future components only.</div>
+
+  <h2 class="section-title">Shadows</h2>
+  <div class="shadow-grid">
+    <div class="shadow-sample" style="box-shadow:0 1px 2px rgba(0,0,0,0.04); border:1px solid #eee;">shadow-sm</div>
+    <div class="shadow-sample" style="box-shadow:0 2px 6px rgba(0,0,0,0.08);">shadow-md</div>
+    <div class="shadow-sample" style="box-shadow:0 8px 24px rgba(0,0,0,0.12);">shadow-lg</div>
+  </div>
+  <div class="flag-note">No shadows appear anywhere on the current live site. These are reserved, unused tokens only — do not apply them to keep this system pixel-accurate.</div>
+
+</div>
+</body>
+</html>

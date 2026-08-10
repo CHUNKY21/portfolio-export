@@ -1,0 +1,126 @@
+<!-- Epic 5: Connected Vehicle Assistant — Mode B (Full Detail Page) -->
+<div class="cva-detail" style="--rust:#D54E2B;--coral1:#F5805C;--coral2:#FF8C7A;--coral3:#FFB088;--lime:#BFFD20;--body:#4A4A4A;--label:#8A8A8A;--line:#E5E5E5;--blue:#1059FF;--purple:#AF00EF;--cyan:#00BCD9;--magenta:#FF40F4;--pain:#DF505C;--goals:#8AD9F8;--strategy:#41854F;--feature:#7C417E;font-family:'Poppins','Century Gothic','Futura',sans-serif;color:var(--body);max-width:900px;margin:0 auto;">
+
+  <style>
+    .cva-detail h2{font-weight:300;font-size:28px;margin:0 0 6px;}
+    .cva-detail h3{font-weight:600;font-size:16px;margin:0 0 10px;}
+    .cva-detail p{line-height:1.6;font-size:15px;}
+    .cva-detail .cva-eyebrow{font-size:12px;color:var(--label);margin-bottom:8px;}
+    .cva-detail .cva-section{padding:48px 32px;}
+    @media (max-width:768px){
+      .cva-detail .cva-4col{grid-template-columns:1fr !important;}
+      .cva-detail .cva-section{padding:32px 20px !important;}
+    }
+  </style>
+
+  <!-- 1. Cover/Hero -->
+  <div style="background:linear-gradient(135deg,var(--coral1),var(--coral2) 55%,var(--coral3));padding:64px 32px;position:relative;overflow:hidden;">
+    <div style="position:absolute;left:0;top:0;bottom:0;width:6px;background:var(--lime);"></div>
+    <div style="position:absolute;left:6px;top:0;bottom:0;width:14px;background:var(--rust);"></div>
+    <div style="max-width:640px;margin-left:40px;">
+      <div style="font-size:12px;color:rgba(255,255,255,.85);margin-bottom:10px;">Concept / speculative · American Honda — extends real service-design research</div>
+      <h2 style="color:#fff;font-size:38px;">Connected Vehicle Assistant</h2>
+      <p style="color:rgba(255,255,255,.95);font-size:16px;">A concept where a scheduling agent, a diagnostics agent, and a service-recommendation agent coordinate behind a single owner-facing assistant — with every entry labeled by which agent generated it.</p>
+      <p style="color:rgba(255,255,255,.85);font-style:italic;font-size:14px;margin-top:20px;">"I get an alert, a reminder, and a text — and none of them talk to each other, so I don't know what actually matters."<br><span style="font-size:11px;opacity:.8;">(illustrative — not a verbatim quote)</span></p>
+    </div>
+  </div>
+
+  <!-- 2. Introduction -->
+  <div class="cva-section">
+    <div class="cva-eyebrow">Introduction</div>
+    <h2>What's the Connected Vehicle Assistant?</h2>
+    <p>A concept extending Michael's real American Honda service-design research: three specialized agents handle diagnostics, scheduling, and service recommendations, feeding one unified assistant feed instead of three disconnected notification sources.</p>
+    <div style="display:inline-flex;align-items:center;justify-content:center;background:#66E3DA;border-radius:999px;padding:16px 26px;margin:20px 0;">
+      <div style="text-align:center;">
+        <div style="font-size:11px;font-weight:600;">Target audience</div>
+        <div style="font-size:13px;">Vehicle owner, connected-vehicle mobile app</div>
+      </div>
+    </div>
+    <h3 style="margin-top:24px;">The problem</h3>
+    <ol style="padding-left:18px;font-size:14px;line-height:1.8;">
+      <li>Owners receive fragmented, one-off notifications — a maintenance reminder here, a diagnostic alert there — with no unified assistant tying scheduling, diagnostics, and service recommendations together</li>
+    </ol>
+    <p style="font-size:13px;color:var(--label);">Extends design and discovery work from Michael's real American Honda service-design engagement into this forward-looking multi-agent concept.</p>
+  </div>
+
+  <!-- 3. Discovery & Research KPI -->
+  <div class="cva-section" style="background:#FAFAFA;">
+    <div class="cva-eyebrow">Discovery &amp; Research</div>
+    <h2>Why does this matter?</h2>
+    <div style="display:flex;gap:48px;flex-wrap:wrap;margin:28px 0;">
+      <div><div style="font-size:56px;color:var(--blue);line-height:1;">~1<span style="font-size:20px;">/3</span></div><div style="font-size:13px;color:var(--label);">of service-center calls are owners asking what an alert means (illustrative estimate)</div></div>
+    </div>
+    <p style="font-size:14px;">Discovery methods (real, carried over from prior Honda engagement): customer interviews and journey-mapping work.</p>
+  </div>
+
+  <!-- 4. Pain points -->
+  <div class="cva-section">
+    <h3>Pain point from research</h3>
+    <ol style="padding-left:18px;font-size:14px;line-height:1.8;">
+      <li>Fragmented, one-off notifications with no unified assistant tying scheduling, diagnostics, and service recommendations together</li>
+    </ol>
+    <p style="font-style:italic;font-size:14px;color:var(--label);">"Every alert feels like it's from a different app, even though it's the same car."<br><span style="font-size:11px;">(illustrative — not a verbatim quote)</span></p>
+  </div>
+
+  <!-- 5. Persona card -->
+  <div class="cva-section" style="background:#FAFAFA;">
+    <h3>Persona</h3>
+    <div style="border:1px solid var(--line);border-radius:12px;padding:24px;max-width:560px;">
+      <div style="font-weight:600;font-size:15px;">Vehicle Owner</div>
+      <div style="font-size:12px;color:var(--label);margin-bottom:12px;">Primary persona, connected-vehicle mobile app</div>
+      <p style="font-style:italic;font-size:13px;">"Just tell me plainly what's wrong and what I need to do — I don't want to decode a warning light myself."</p>
+      <p style="font-size:12px;color:var(--label);margin:4px 0 0;">(illustrative sentiment — reasonably inferred from brief WHO/WHAT, not a sourced verbatim)</p>
+      <div style="display:flex;gap:24px;margin-top:16px;flex-wrap:wrap;">
+        <div><div style="font-size:12px;font-weight:600;">Key challenges</div><div style="font-size:12px;color:var(--label);">Fragmented notifications; uncertainty about alert urgency; friction getting from alert to appointment</div></div>
+        <div><div style="font-size:12px;font-weight:600;">Wishlist</div><div style="font-size:12px;color:var(--label);">One place for vehicle status; plain-language explanations; one-tap scheduling</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Four-column framework -->
+  <div class="cva-section">
+    <h3>Pain Points + Business Goals + UX Strategy = Feature Set</h3>
+    <div class="cva-4col" style="display:grid;grid-template-columns:repeat(4,1fr);gap:2px;border-radius:10px;overflow:hidden;">
+      <div style="background:var(--pain);color:#fff;padding:18px;font-size:12px;line-height:1.6;"><b style="display:block;margin-bottom:8px;">Pain Points</b>Fragmented, one-off notifications · No plain-language alert translation · Scheduling requires a separate flow</div>
+      <div style="background:var(--goals);color:#1a1a1a;padding:18px;font-size:12px;line-height:1.6;"><b style="display:block;margin-bottom:8px;">Business Goals</b>Increase service-scheduling conversion · Reduce missed-maintenance issues · Strengthen owner-dealer relationship</div>
+      <div style="background:var(--strategy);color:#fff;padding:18px;font-size:12px;line-height:1.6;"><b style="display:block;margin-bottom:8px;">UX Strategy</b>Extend real Honda findings · Agent proposes, owner confirms · Unified feed with per-entry agent labeling</div>
+      <div style="background:var(--feature);color:#fff;padding:18px;font-size:12px;line-height:1.6;"><b style="display:block;margin-bottom:8px;">Feature Set</b>Diagnostics, scheduling &amp; service-recommendation agents · Unified feed · Entry consolidation · One-tap scheduling</div>
+    </div>
+  </div>
+
+  <!-- 7. Design/Process -->
+  <div class="cva-section" style="background:#FAFAFA;">
+    <h3>Design / Process</h3>
+    <p style="font-size:14px;"><b>Discovery &amp; Research</b> — real customer interviews and journey mapping carried over from prior Honda engagement. New: mapped which parts of the ownership experience are agent-automatable vs. requiring human judgment, and surfaced the owner's distinct trust baseline toward diagnostic claims.</p>
+    <p style="font-size:14px;"><b>Design Thinking &amp; Ideation</b> — centered on agent behavior: what each agent surfaces, how related outputs are merged rather than piled up, where agent-proposes/owner-confirms sits.</p>
+    <p style="font-size:14px;"><b>Design Sprints &amp; Iteration / Usability Testing</b> — not yet run; this is a concept/vision piece, no fabricated test results are presented.</p>
+    <div style="background:#FDECEC;border-left:4px solid var(--pain);padding:16px 20px;border-radius:6px;margin-top:16px;">
+      <b style="font-size:13px;color:var(--pain);">Unexpected challenge</b>
+      <p style="font-size:13px;margin:6px 0 0;">The hardest open question isn't individual agent accuracy — it's whether three independently-triggering agents actually reduce notification volume, or just relabel the same volume with better attribution.</p>
+    </div>
+    <!-- VISUAL: Unified Assistant Feed screen, from 05-connected-vehicle-assistant-wireframes.md -->
+  </div>
+
+  <!-- 8. Results -->
+  <div class="cva-section">
+    <h3>Results (targets, not measured)</h3>
+    <div style="display:flex;gap:40px;flex-wrap:wrap;">
+      <div><div style="font-size:44px;color:var(--blue);">~20<span style="font-size:16px;">%</span></div><div style="font-size:12px;color:var(--label);">scheduling conversion uplift (target)</div></div>
+      <div><div style="font-size:44px;color:var(--magenta);">~35<span style="font-size:16px;">%</span></div><div style="font-size:12px;color:var(--label);">fewer "what does this alert mean" calls (target)</div></div>
+      <div><div style="font-size:44px;color:var(--cyan);">≥75<span style="font-size:16px;">%</span></div><div style="font-size:12px;color:var(--label);">owner trust target</div></div>
+    </div>
+  </div>
+
+  <!-- 9. Key Insight -->
+  <div class="cva-section" style="background:var(--rust);color:#fff;">
+    <h3 style="color:#fff;">Key Insight</h3>
+    <p style="font-size:17px;font-style:italic;line-height:1.6;">"When three agents can each independently decide to reach the owner, the UX problem isn't whether each agent works — it's whether the owner ends up with one coherent assistant, or three notification sources wearing one label. Entry consolidation and per-entry agent attribution are the concept's actual answer to that risk."</p>
+    <!-- VISUAL: Diagnostic Alert Detail screen, from 05-connected-vehicle-assistant-wireframes.md -->
+  </div>
+
+  <!-- 10. CTA -->
+  <div class="cva-section" style="background:linear-gradient(135deg,var(--coral1),var(--coral2) 55%,var(--coral3));text-align:center;">
+    <h3 style="color:#fff;">Interested in the full process?</h3>
+    <p style="color:rgba(255,255,255,.95);">Get in touch — michaelthbd@yahoo.com</p>
+  </div>
+</div>

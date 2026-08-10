@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio Component Library — Website Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --nav-rust: #C1592E;
+    --hero-warm: #FFE8B5;
+    --hero-coral: #F4967D;
+    --headline-navy: #1E2A6E;
+    --footer-magenta: #E91E8C;
+    --section-gray: #F2F2F2;
+    --bg-white: #FFFFFF;
+    --text-primary: #2B2B2B;
+    --text-secondary: #8A8A8A;
+    --text-active: #1A1A1A;
+    --diagram-teal: #4FBFB0;
+    --diagram-lime: #B4D468;
+    --diagram-green: #7CB87C;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-primary);
+    background: #fff;
+  }
+
+  .guide-wrap { max-width: 1100px; margin: 0 auto; }
+
+  .guide-label {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    padding: 40px 24px 8px;
+  }
+
+  /* ============ 1. NAV BAR ============ */
+  .component-navbar {
+    background: var(--nav-rust);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 32px;
+  }
+  .navbar-wordmark {
+    color: #fff;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+  .navbar-wordmark .paren { font-weight: 400; }
+  .navbar-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    opacity: 0.85;
+  }
+  .navbar-links a.active { opacity: 1; border-bottom: 1px solid #fff; padding-bottom: 3px; }
+  .navbar-cta {
+    border: 1px solid #fff;
+    color: #fff;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: 9px 18px;
+    border-radius: 999px;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+  @media (max-width: 768px) {
+    .navbar-links { display: none; }
+  }
+
+  /* ============ 2. HERO — GRADIENT STATEMENT ============ */
+  .component-hero {
+    background: radial-gradient(ellipse at 30% 40%, var(--hero-warm) 0%, var(--hero-coral) 75%);
+    padding: 110px 40px;
+    text-align: center;
+  }
+  .hero-statement {
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1.55;
+    color: var(--headline-navy);
+    max-width: 780px;
+    margin: 0 auto;
+    text-transform: lowercase;
+  }
+  @media (max-width: 768px) {
+    .component-hero { padding: 64px 24px; }
+    .hero-statement { font-size: 20px; }
+  }
+
+  /* Hero variant: screenshot-blur behind statement (case study detail pages) */
+  .component-hero-blur {
+    position: relative;
+    background: var(--hero-warm);
+    padding: 90px 40px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero-blur-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--hero-warm), var(--hero-coral));
+    filter: blur(2px);
+    opacity: 0.5;
+  }
+  .hero-blur-content { position: relative; z-index: 1; }
+  .hero-blur-title {
+    font-size: 26px;
+    color: var(--headline-navy);
+    text-transform: lowercase;
+    margin-bottom: 10px;
+  }
+  .hero-blur-tagline {
+    font-size: 22px;
+    color: var(--headline-navy);
+    font-weight: 500;
+  }
+
+  /* ============ 3. WORK GRID ITEM ============ */
+  .component-workgrid {
+    background: var(--section-gray);
+    padding: 60px 40px;
+  }
+  .workgrid-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .workgrid-item img { width: 100%; display: block; border-radius: 2px; }
+  .workgrid-caption {
+    margin-top: 14px;
+    font-size: 14px;
+    color: var(--text-primary);
+  }
+  @media (max-width: 768px) {
+    .workgrid-row { grid-template-columns: 1fr; }
+  }
+
+  /* ============ 4. CASE STUDY SIDEBAR NAV ============ */
+  .component-detail-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    gap: 60px;
+    padding: 70px 40px;
+    background: var(--section-gray);
+  }
+  .sidebar-header {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    color: var(--text-primary);
+    margin-bottom: 20px;
+  }
+  .sidebar-list { list-style: none; }
+  .sidebar-list li { margin-bottom: 12px; font-size: 15px; }
+  .sidebar-list a { text-decoration: none; color: var(--text-secondary); }
+  .sidebar-list a.active { color: var(--text-active); font-weight: 500; }
+  @media (max-width: 768px) {
+    .component-detail-layout { grid-template-columns: 1fr; }
+  }
+
+  /* ============ 5. SECTION LABEL ============ */
+  .section-label {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--text-primary);
+    margin-top: 32px;
+    margin-bottom: 10px;
+  }
+  .case-title { font-size: 26px; font-weight: 700; margin-bottom: 4px; }
+  .case-subtitle { font-style: italic; font-size: 15px; color: var(--text-secondary); margin-bottom: 28px; }
+  .case-body { font-size: 15px; line-height: 1.7; color: var(--text-primary); }
+
+  /* ============ 6. NUMBERED PROCESS STEP ============ */
+  .process-step { margin-top: 24px; }
+  .process-step-title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .process-step-title .num { color: var(--diagram-teal); margin-right: 6px; }
+  .process-step-body { font-size: 15px; line-height: 1.7; color: var(--text-primary); }
+
+  /* ============ 7. FLOW DIAGRAM NODE SET ============ */
+  .component-diagram {
+    background: #fff;
+    border: 1px solid #eee;
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+  .diagram-node { text-align: center; font-size: 11px; color: var(--text-primary); }
+  .diagram-circle {
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--diagram-teal);
+    margin: 0 auto 8px;
+  }
+  .diagram-diamond {
+    width: 40px; height: 40px;
+    background: var(--diagram-lime);
+    transform: rotate(45deg);
+    margin: 8px auto 16px;
+  }
+  .diagram-box {
+    width: 90px; padding: 14px 8px;
+    background: var(--diagram-green);
+    color: #fff;
+    border-radius: 3px;
+    margin-bottom: 8px;
+    font-size: 11px;
+    line-height: 1.3;
+  }
+  .diagram-arrow { color: #bbb; font-size: 18px; }
+  .diagram-caption {
+    margin-top: 24px;
+    font-size: 13px;
+    color: var(--text-secondary);
+    text-align: center;
+  }
+
+  /* ============ 8. FOOTER BAR ============ */
+  .component-footer {
+    background: var(--footer-magenta);
+    padding: 26px 24px;
+    text-align: center;
+  }
+  .footer-text {
+    color: #fff;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  @media (max-width: 480px) {
+    .footer-text { letter-spacing: 1.5px; font-size: 10px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="guide-wrap">
+
+  <div class="guide-label">01 — Nav Bar</div>
+  <nav class="component-navbar">
+    <div class="navbar-wordmark">THIBODEA<span class="paren">(U|X)</span></div>
+    <div class="navbar-links">
+      <a href="#">My Goal</a>
+      <a href="#" class="active">The Work</a>
+      <a href="#">My Role</a>
+      <a href="#">My Resume</a>
+      <a href="#">My Contact Info</a>
+    </div>
+    <a href="#" class="navbar-cta">Download Case Studies</a>
+  </nav>
+
+  <div class="guide-label">02 — Hero, Gradient Statement</div>
+  <div class="component-hero">
+    <p class="hero-statement">i'm a ux leader who designs ai-amplified experiences for financial services — turning compliance, risk, and investment workflows into interfaces people actually trust.</p>
+  </div>
+
+  <div class="guide-label">02b — Hero Variant, Screenshot-Blur (case study pages)</div>
+  <div class="component-hero-blur">
+    <div class="hero-blur-bg"></div>
+    <div class="hero-blur-content">
+      <div class="hero-blur-title">compliance alert triage copilot</div>
+      <div class="hero-blur-tagline">turning 200+ daily alerts into actionable intelligence</div>
+    </div>
+  </div>
+
+  <div class="guide-label">03 — Work Grid Item</div>
+  <div class="component-workgrid">
+    <div class="workgrid-row">
+      <div class="workgrid-item">
+        <img src="https://placehold.co/560x360/2B2B2B/FFFFFF?text=Compliance+Copilot" alt="">
+        <div class="workgrid-caption">Compliance Alert Triage Copilot</div>
+      </div>
+      <div class="workgrid-item">
+        <img src="https://placehold.co/560x360/1E2A6E/FFFFFF?text=Risk+Assessment+Tool" alt="">
+        <div class="workgrid-caption">Conversational Risk Assessment Tool</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="guide-label">04 &amp; 05 &amp; 06 — Case Study Detail: Sidebar, Section Labels, Numbered Steps</div>
+  <div class="component-detail-layout">
+    <div>
+      <div class="sidebar-header">The Work</div>
+      <ul class="sidebar-list">
+        <li><a href="#" class="active">Compliance Alert Triage Copilot</a></li>
+        <li><a href="#">Conversational Risk Assessment</a></li>
+        <li><a href="#">Intelligent Portfolio Dashboard</a></li>
+        <li><a href="#">AI-Personalized Onboarding</a></li>
+        <li><a href="#">Smart Report Generator</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="case-title">Compliance Alert Triage Copilot</div>
+      <div class="case-subtitle">Redesigning alert triage for a wealth management compliance team</div>
+
+      <div class="section-label">The Problem</div>
+      <p class="case-body">Compliance officers received 200–350 daily alerts with 65% false positives, spending 6+ hours a day on manual triage.</p>
+
+      <div class="section-label">Our Solution</div>
+      <p class="case-body">An adaptive triage dashboard where every alert arrives pre-explained — risk score, evidence, and a plain-language rationale.</p>
+
+      <div class="section-label">The Application Concept Has a 3 Step Process</div>
+      <div class="process-step">
+        <div class="process-step-title"><span class="num">1</span>RESEARCH SYNTHESIS</div>
+        <p class="process-step-body">Claude analyzes 12 months of alert logs and officer resolution notes to extract recurring decision patterns.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-title"><span class="num">2</span>CONFIDENCE SCORING</div>
+        <p class="process-step-body">Each alert is scored with supporting evidence and a natural-language explanation of why it was flagged.</p>
+      </div>
+      <div class="process-step">
+        <div class="process-step-title"><span class="num">3</span>FEEDBACK LOOP</div>
+        <p class="process-step-body">Officer overrides retrain the scoring logic, so the system improves with real-world use.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="guide-label">07 — Flow Diagram Node Set</div>
+  <div class="component-diagram">
+    <div class="diagram-node">
+      <div class="diagram-circle"></div>
+      Alert Received
+    </div>
+    <div class="diagram-arrow">→</div>
+    <div class="diagram-node">
+      <div class="diagram-diamond"></div>
+      Score &gt; 70%?
+    </div>
+    <div class="diagram-arrow">→</div>
+    <div class="diagram-node">
+      <div class="diagram-box">Route to Officer Queue</div>
+    </div>
+    <div class="diagram-arrow">→</div>
+    <div class="diagram-node">
+      <div class="diagram-box">Officer Reviews &amp; Decides</div>
+    </div>
+    <div class="diagram-arrow">→</div>
+    <div class="diagram-node">
+      <div class="diagram-box">Feedback Trains Model</div>
+    </div>
+  </div>
+  <div class="diagram-caption">Alert triage flow — mapped from officer decision patterns</div>
+
+  <div class="guide-label">08 — Footer Bar</div>
+  <div class="component-footer">
+    <div class="footer-text">Brooklyn, USA &nbsp; 646.436.2876 &nbsp; michaelthbd@yahoo.com</div>
+  </div>
+
+</div>
+
+</body>
+</html>

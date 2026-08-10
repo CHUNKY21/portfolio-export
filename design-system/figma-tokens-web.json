@@ -1,0 +1,108 @@
+{
+  "global": {
+    "color": {
+      "web": {
+        "nav-rust": { "value": "#C1592E", "type": "color" },
+        "hero-gradient-warm": { "value": "#FFE8B5", "type": "color" },
+        "hero-gradient-coral": { "value": "#F4967D", "type": "color" },
+        "headline-navy": { "value": "#1E2A6E", "type": "color" },
+        "footer-magenta": { "value": "#E91E8C", "type": "color" },
+        "section-gray": { "value": "#F2F2F2", "type": "color" },
+        "background-white": { "value": "#FFFFFF", "type": "color" },
+        "text-primary": { "value": "#2B2B2B", "type": "color" },
+        "text-secondary": { "value": "#8A8A8A", "type": "color" },
+        "text-active": { "value": "#1A1A1A", "type": "color" },
+        "diagram-teal": { "value": "#4FBFB0", "type": "color" },
+        "diagram-lime": { "value": "#B4D468", "type": "color" },
+        "diagram-green": { "value": "#7CB87C", "type": "color" },
+        "white": { "value": "#FFFFFF", "type": "color" }
+      }
+    },
+    "typography": {
+      "hero-statement": {
+        "value": {
+          "fontFamily": "Poppins",
+          "fontWeight": "Regular",
+          "fontSize": "34",
+          "lineHeight": "150%",
+          "letterSpacing": "0%"
+        },
+        "type": "typography"
+      },
+      "case-study-title": {
+        "value": {
+          "fontFamily": "Poppins",
+          "fontWeight": "Bold",
+          "fontSize": "28",
+          "lineHeight": "120%",
+          "letterSpacing": "0%"
+        },
+        "type": "typography"
+      },
+      "italic-subtitle": {
+        "value": {
+          "fontFamily": "Poppins",
+          "fontWeight": "Regular Italic",
+          "fontSize": "16",
+          "lineHeight": "140%",
+          "letterSpacing": "0%"
+        },
+        "type": "typography"
+      },
+      "section-label": {
+        "value": {
+          "fontFamily": "Poppins",
+          "fontWeight": "Bold",
+          "fontSize": "13",
+          "lineHeight": "130%",
+          "letterSpacing": "8%"
+        },
+        "type": "typography"
+      },
+      "body-default": {
+        "value": {
+          "fontFamily": "Poppins",
+          "fontWeight": "Regular",
+          "fontSize": "16",
+          "lineHeight": "150%",
+          "letterSpacing": "0%"
+        },
+        "type": "typography"
+      },
+      "sidebar-header": {
+        "value": {
+          "fontFamily": "Caveat",
+          "fontWeight": "Regular",
+          "fontSize": "28",
+          "lineHeight": "120%",
+          "letterSpacing": "0%"
+        },
+        "type": "typography"
+      },
+      "sidebar-link": {
+        "value": {
+          "fontFamily": "Poppins",
+          "fontWeight": "Regular",
+          "fontSize": "15",
+          "lineHeight": "180%",
+          "letterSpacing": "0%"
+        },
+        "type": "typography"
+      },
+      "footer-text": {
+        "value": {
+          "fontFamily": "Poppins",
+          "fontWeight": "Regular",
+          "fontSize": "13",
+          "lineHeight": "130%",
+          "letterSpacing": "10%"
+        },
+        "type": "typography"
+      }
+    }
+  },
+  "$themes": [],
+  "$metadata": {
+    "tokenSetOrder": ["global"]
+  }
+}

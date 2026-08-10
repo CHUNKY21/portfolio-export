@@ -1,0 +1,164 @@
+/**
+ * Design System Tokens — Centralized CSS Custom Properties
+ * Source: /docs/design-system.md (web edition) + design-system.md (PDF edition)
+ * Usage: Link this file in all portfolio pages to maintain consistency
+ *
+ * All color, spacing, and typography values are defined here.
+ * Do NOT hardcode hex values in pages — use these tokens instead.
+ */
+
+:root {
+  /* ========== BRAND COLORS ========== */
+  /* Navigation & Primary Brand Anchor */
+  --color-primary: #C1592E;         /* Rust: nav bar, section dividers */
+
+  /* Hero Gradient (warm → coral → light) */
+  --color-hero-warm: #FFE8B5;       /* Cream start point */
+  --color-hero-coral: #F4967D;      /* Coral mid-point */
+  --color-hero-light: #FFB088;      /* Light coral endpoint */
+
+  /* Alternative gradient used in some concepts (slightly warmer) */
+  --color-coral-1: #F5805C;         /* Gradient start (concept pages) */
+  --color-coral-2: #FF8C7A;         /* Gradient mid (concept pages) */
+  --color-coral-3: #FFB088;         /* Gradient end (concept pages) */
+
+  /* Secondary Brand Elements */
+  --color-headline-navy: #1E2A6E;   /* Hero headline text */
+  --color-footer: #E91E8C;          /* Footer background (magenta) */
+  --color-accent-lime: #BFFD20;     /* Cover edge accent bar */
+
+  /* ========== SEMANTIC COLORS ========== */
+  /* Four-Column Framework (Pain Points → Business Goals → UX Strategy → Feature Set) */
+  --color-pain-points: #DF505C;     /* Red: pain points column */
+  --color-business-goals: #8AD9F8;  /* Light blue: business goals column */
+  --color-ux-strategy: #41854F;     /* Green: UX strategy column */
+  --color-feature-set: #7C417E;     /* Purple: feature set column */
+
+  /* KPI & Callout Accents */
+  --color-kpi-blue: #1059FF;        /* KPI stat color rotation */
+  --color-kpi-purple: #AF00EF;      /* KPI stat color rotation */
+  --color-kpi-cyan: #00BCD9;        /* KPI stat color rotation */
+  --color-kpi-magenta: #FF40F4;     /* KPI stat color rotation */
+
+  /* Callout Boxes */
+  --color-learning-box: #E8F5E9;    /* "What we learned" background */
+  --color-learning-accent: #41854F; /* "What we learned" border/text */
+  --color-challenge-box: #FDECEC;   /* "Unexpected challenge" background */
+  --color-challenge-accent: #DF505C; /* "Unexpected challenge" border/text */
+
+  /* Diagram Nodes */
+  --color-diagram-teal: #4FBFB0;    /* Flow diagram start node (circle) */
+  --color-diagram-lime: #B4D468;    /* Flow diagram decision node (diamond) */
+  --color-diagram-green: #7CB87C;   /* Flow diagram process nodes (boxes) */
+
+  /* ========== NEUTRAL COLORS ========== */
+  --color-bg-white: #FFFFFF;        /* Page background */
+  --color-bg-gray: #FAFAFA;         /* Section background (very light gray) */
+  --color-bg-section: #F2F2F2;      /* Section background (light gray) */
+  --color-border: #E5E5E5;          /* Borders, dividers */
+
+  /* Text Colors */
+  --color-text-primary: #2B2B2B;    /* Body text, headings */
+  --color-text-secondary: #8A8A8A;  /* Labels, captions, inactive */
+  --color-text-active: #1A1A1A;     /* Active/emphasis text */
+  --color-text-light: #4A4A4A;      /* Medium-emphasis text */
+  --color-text-white: #FFFFFF;      /* Text on colored backgrounds */
+
+  /* ========== TYPOGRAPHY ========== */
+  --font-family-body: -apple-system, BlinkMacSystemFont, 'Poppins', 'Helvetica Neue', Arial, sans-serif;
+  --font-family-display: 'Poppins', sans-serif;
+
+  /* Type Scale */
+  --font-size-display: 30px;        /* Hero statement (lowercase, centered) */
+  --font-size-h1: 38px;             /* Case study title (hero) */
+  --font-size-h2: 28px;             /* Section header */
+  --font-size-h3: 16px;             /* Subsection header */
+  --font-size-h4: 13px;             /* Section label (uppercase) */
+  --font-size-body: 15px;           /* Body copy */
+  --font-size-small: 13px;          /* Small text, captions */
+  --font-size-micro: 12px;          /* Micro text, footer */
+  --font-size-eyebrow: 12px;        /* Breadcrumb, section eyebrow */
+
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Line Heights */
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.4;
+  --line-height-comfortable: 1.6;
+  --line-height-relaxed: 1.7;
+
+  /* Letter Spacing */
+  --letter-spacing-normal: 0;
+  --letter-spacing-tracked: 0.04em;
+  --letter-spacing-wide: 0.08em;
+
+  /* ========== SPACING SCALE ========== */
+  /* Base unit: 8px */
+  --space-xs: 4px;                  /* Icon padding, tight spacing */
+  --space-sm: 8px;                  /* Compact padding */
+  --space-md: 16px;                 /* Standard padding */
+  --space-lg: 24px;                 /* Card/section padding */
+  --space-xl: 40px;                 /* Component spacing */
+  --space-2xl: 64px;                /* Section spacing */
+  --space-3xl: 90px;                /* Hero section padding */
+
+  /* ========== BORDERS & RADIUS ========== */
+  --radius-sm: 2px;                 /* Subtle corners (images) */
+  --radius-md: 4px;                 /* Small components */
+  --radius-lg: 8px;                 /* Cards */
+  --radius-full: 999px;             /* Pills, badges */
+
+  /* Borders */
+  --border-width: 1px;
+
+  /* ========== SHADOWS ========== */
+  /* Note: Current site is flat (no shadows). Reserved for future interactive elements. */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+  /* ========== LAYOUT ========== */
+  --max-width-content: 900px;       /* Case study detail pages */
+  --max-width-wide: 1000px;         /* Work grid sections */
+  --breakpoint-mobile: 768px;       /* Mobile breakpoint */
+
+  /* Padding */
+  --padding-page-desktop: 32px;
+  --padding-page-mobile: 20px;
+  --padding-section: 48px 32px;
+  --padding-section-mobile: 32px 20px;
+
+  /* Gaps */
+  --gap-component: 32px;
+  --gap-subcomponent: 16px;
+}
+
+/* ========== UTILITY CLASSES ========== */
+
+.color-gradient-hero {
+  background: linear-gradient(135deg, var(--color-coral-1), var(--color-coral-2) 55%, var(--color-coral-3));
+}
+
+.color-gradient-warm {
+  background: linear-gradient(135deg, var(--color-hero-warm), var(--color-hero-coral));
+}
+
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-white { color: var(--color-text-white); }
+
+.bg-white { background: var(--color-bg-white); }
+.bg-gray { background: var(--color-bg-gray); }
+.bg-section { background: var(--color-bg-section); }
+
+/* Responsive */
+@media (max-width: 768px) {
+  :root {
+    --font-size-display: 20px;
+    --font-size-h1: 24px;
+    --padding-section: 32px 20px;
+  }
+}

@@ -1,0 +1,506 @@
+<!-- Epic 3: AI Pattern Library — Mode B (Full Detail Page) — paste into a Squarespace Code Block as the standalone case-study page -->
+<div class="aipld-wrap">
+  <style>
+    .aipld-wrap {
+      --terracotta: #D54E2B;
+      --coral: #F5805C;
+      --lime: #BFFD20;
+      --blue: #1059FF;
+      --purple: #AF00EF;
+      --cyan: #00BCD9;
+      --magenta: #FF40F4;
+      --pp-red: #DF505C;
+      --bg-blue: #8AD9F8;
+      --ux-green: #41854F;
+      --fs-purple: #7C417E;
+      --persona-green: #A6DF85;
+      --persona-teal: #66E3DA;
+      font-family: 'Century Gothic', 'Poppins', sans-serif;
+      color: #4a4a4a;
+      max-width: 1040px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    .aipld-wrap * { box-sizing: border-box; }
+    .aipld-wrap h1, .aipld-wrap h2, .aipld-wrap h3 {
+      font-weight: 300;
+      color: #2c2c2c;
+      margin: 0;
+    }
+    .aipld-section { padding: 56px 24px; }
+    .aipld-breadcrumb {
+      font-size: 12px;
+      color: #9a9a9a;
+      padding: 18px 24px 0;
+    }
+    .aipld-breadcrumb .sep { margin: 0 14px; }
+
+    /* 1. Cover / Hero */
+    .aipld-hero {
+      background: linear-gradient(120deg, var(--coral) 0%, #FF8C7A 50%, #FFB088 100%);
+      padding: 64px 24px 56px;
+      position: relative;
+      overflow: hidden;
+    }
+    .aipld-hero-accents { display: flex; gap: 6px; margin-bottom: 22px; }
+    .aipld-hero-accents span { width: 34px; height: 8px; border-radius: 2px; }
+    .aipld-hero-accents .a1 { background: var(--lime); }
+    .aipld-hero-accents .a2 { background: var(--terracotta); }
+    .aipld-hero-title { font-size: 46px; color: #fff; margin-bottom: 10px; }
+    .aipld-hero-tagline { font-size: 18px; color: rgba(255,255,255,0.95); font-weight: 400; max-width: 640px; margin-bottom: 18px; }
+    .aipld-hero-desc { font-size: 15px; color: rgba(255,255,255,0.88); max-width: 620px; margin-bottom: 26px; }
+    .aipld-status-badge {
+      display: inline-block;
+      font-size: 12px;
+      color: #fff;
+      background: rgba(0,0,0,0.18);
+      border-radius: 999px;
+      padding: 6px 14px;
+      margin-bottom: 22px;
+    }
+    .aipld-quote {
+      font-style: italic;
+      color: rgba(255,255,255,0.95);
+      font-size: 16px;
+      max-width: 560px;
+      border-left: 2px solid rgba(255,255,255,0.5);
+      padding-left: 16px;
+    }
+    .aipld-flag-note {
+      font-size: 12px;
+      color: rgba(255,255,255,0.75);
+      display: block;
+      margin-top: 8px;
+      font-style: normal;
+    }
+
+    /* 2. Introduction */
+    .aipld-intro-grid { display: flex; gap: 40px; flex-wrap: wrap; }
+    .aipld-intro-main { flex: 2; min-width: 300px; }
+    .aipld-intro-side { flex: 1; min-width: 220px; }
+    .aipld-circle {
+      background: var(--persona-teal);
+      color: #fff;
+      border-radius: 50%;
+      width: 190px;
+      height: 190px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 26px;
+      font-size: 13px;
+    }
+    .aipld-circle strong { display: block; font-size: 14px; margin-bottom: 8px; font-weight: 600; }
+    .aipld-circle ul { margin: 0; padding-left: 16px; }
+    .aipld-problem-list { margin-top: 18px; padding-left: 20px; }
+    .aipld-problem-list li { margin-bottom: 8px; }
+    .aipld-role-note {
+      margin-top: 22px;
+      font-size: 13.5px;
+      color: #6a6a6a;
+      border-top: 1px solid #eee;
+      padding-top: 14px;
+    }
+
+    /* 3. KPI stat block */
+    .aipld-kpi-row { display: flex; gap: 44px; flex-wrap: wrap; margin-top: 24px; }
+    .aipld-kpi { min-width: 180px; }
+    .aipld-kpi-num { font-size: 74px; font-weight: 300; line-height: 1; }
+    .aipld-kpi-num.blue { color: var(--blue); }
+    .aipld-kpi-num.purple { color: var(--purple); }
+    .aipld-kpi-num.cyan { color: var(--cyan); }
+    .aipld-kpi-num.magenta { color: var(--magenta); }
+    .aipld-kpi-desc { font-size: 13.5px; color: #6a6a6a; margin-top: 8px; max-width: 240px; }
+    .aipld-kpi-flag { font-size: 11.5px; color: #a9a9a9; font-style: italic; display: block; margin-top: 4px; }
+    .aipld-methods { margin-top: 30px; font-size: 14px; }
+
+    /* 4. Pain points */
+    .aipld-bg-light { background: #faf9f7; }
+    .aipld-pain-list { counter-reset: pain; list-style: none; padding: 0; margin-top: 20px; }
+    .aipld-pain-list li {
+      counter-increment: pain;
+      position: relative;
+      padding-left: 42px;
+      margin-bottom: 16px;
+      font-size: 15px;
+    }
+    .aipld-pain-list li::before {
+      content: counter(pain);
+      position: absolute;
+      left: 0; top: -2px;
+      width: 28px; height: 28px;
+      background: var(--pp-red);
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+    }
+    .aipld-callout {
+      margin-top: 26px;
+      text-align: center;
+      font-style: italic;
+      color: #6a6a6a;
+      font-size: 17px;
+      max-width: 640px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* 5. Persona card */
+    .aipld-persona {
+      border: 1px solid #eee;
+      border-radius: 14px;
+      overflow: hidden;
+      max-width: 620px;
+    }
+    .aipld-persona-top { display: flex; gap: 18px; padding: 22px; align-items: center; }
+    .aipld-persona-photo {
+      width: 72px; height: 72px; border-radius: 50%;
+      background: #e8e8e8;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; color: #999; text-align: center;
+      flex-shrink: 0;
+    }
+    .aipld-persona-name { font-size: 19px; color: #2c2c2c; margin-bottom: 4px; }
+    .aipld-persona-role { font-size: 13px; color: #8a8a8a; }
+    .aipld-persona-accent { height: 6px; background: var(--persona-green); }
+    .aipld-persona-quote-block {
+      background: var(--persona-green);
+      color: #fff;
+      padding: 20px 22px;
+      font-style: italic;
+      font-size: 15px;
+    }
+    .aipld-persona-detail { padding: 20px 22px; }
+    .aipld-persona-detail h4 { font-size: 13px; text-transform: none; color: #2c2c2c; margin: 14px 0 6px; font-weight: 600; }
+    .aipld-persona-detail h4:first-child { margin-top: 0; }
+    .aipld-persona-detail p, .aipld-persona-detail ul { font-size: 13.5px; margin: 0; padding-left: 18px; }
+
+    /* 6. Four-column framework */
+    .aipld-framework { display: flex; gap: 4px; flex-wrap: wrap; align-items: stretch; margin-top: 24px; }
+    .aipld-fw-col {
+      flex: 1;
+      min-width: 200px;
+      color: #fff;
+      padding: 20px 18px;
+      border-radius: 8px;
+    }
+    .aipld-fw-col.pp { background: var(--pp-red); }
+    .aipld-fw-col.bg { background: var(--bg-blue); color: #1a3a4a; }
+    .aipld-fw-col.ux { background: var(--ux-green); }
+    .aipld-fw-col.fs { background: var(--fs-purple); }
+    .aipld-fw-col h4 { font-size: 14px; margin-bottom: 10px; font-weight: 600; }
+    .aipld-fw-col ul { margin: 0; padding-left: 16px; font-size: 12.5px; }
+    .aipld-fw-col li { margin-bottom: 6px; }
+    .aipld-fw-sym { display: flex; align-items: center; justify-content: center; font-size: 22px; color: #cfcfcf; padding: 0 4px; }
+    @media (max-width: 800px) { .aipld-fw-sym { display: none; } }
+
+    /* 7. Design/Process */
+    .aipld-stage { margin-bottom: 26px; border-left: 3px solid #eee; padding-left: 18px; }
+    .aipld-stage h4 { font-size: 15.5px; color: #2c2c2c; margin-bottom: 6px; }
+    .aipld-stage p { font-size: 13.5px; margin: 0 0 4px; }
+    .aipld-stage .same { color: #6a6a6a; }
+    .aipld-stage .new { color: #2c2c2c; }
+    .aipld-callout-box {
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin: 22px 0;
+      font-size: 13.5px;
+    }
+    .aipld-callout-box.learned { background: #eef6ee; border-left: 4px solid var(--ux-green); }
+    .aipld-callout-box.challenge { background: #fbecec; border-left: 4px solid var(--pp-red); }
+    .aipld-callout-box strong { display: block; margin-bottom: 6px; font-size: 12.5px; text-transform: uppercase; letter-spacing: 0.03em; }
+    .aipld-visual-slot {
+      margin-top: 20px;
+      border: 1px dashed #d8d8d8;
+      border-radius: 10px;
+      padding: 24px;
+      text-align: center;
+      font-size: 12.5px;
+      color: #a9a9a9;
+    }
+
+    /* 9. Key insight */
+    .aipld-insight {
+      background: #2c2c2c;
+      color: #fff;
+      border-radius: 14px;
+      padding: 40px;
+      text-align: center;
+    }
+    .aipld-insight blockquote { font-size: 20px; font-weight: 300; line-height: 1.5; margin: 0; font-style: italic; }
+    .aipld-insight cite { display: block; margin-top: 16px; font-size: 12px; color: #bbb; font-style: normal; }
+
+    /* 10. CTA */
+    .aipld-cta-band {
+      background: linear-gradient(120deg, var(--coral) 0%, #FF8C7A 50%, #FFB088 100%);
+      padding: 48px 24px;
+      text-align: center;
+      border-radius: 16px;
+    }
+    .aipld-cta-band h2 { color: #fff; font-size: 28px; margin-bottom: 10px; }
+    .aipld-cta-band p { color: rgba(255,255,255,0.92); font-size: 14px; margin-bottom: 20px; }
+    .aipld-cta-btn {
+      display: inline-block;
+      background: #fff;
+      color: var(--terracotta);
+      padding: 12px 28px;
+      border-radius: 999px;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 720px) {
+      .aipld-section { padding: 36px 18px; }
+      .aipld-hero { padding: 44px 18px 36px; }
+      .aipld-hero-title { font-size: 32px; }
+      .aipld-intro-grid { flex-direction: column; }
+      .aipld-kpi-row { gap: 28px; }
+      .aipld-kpi-num { font-size: 54px; }
+      .aipld-framework { flex-direction: column; }
+    }
+  </style>
+
+  <!-- Breadcrumb -->
+  <div class="aipld-breadcrumb">Design Systems<span class="sep"></span>AI Pattern Library</div>
+
+  <!-- 1. Cover / Hero -->
+  <section class="aipld-hero">
+    <div class="aipld-hero-accents"><span class="a1"></span><span class="a2"></span></div>
+    <span class="aipld-status-badge">Synthesis case study — not a single shipped rollout</span>
+    <h1 class="aipld-hero-title">AI Pattern Library</h1>
+    <p class="aipld-hero-tagline">A design system for AI states.</p>
+    <p class="aipld-hero-desc">A defined set of reusable AI-interaction components — confidence, sourcing, in-progress response, correction, human handoff — documented and governed the same way as any other design-system component, so product teams stop reinventing AI trust patterns from scratch.</p>
+    <blockquote class="aipld-quote">
+      &ldquo;We built confidence three different ways across three teams, and none of them talk to each other.&rdquo;
+      <span class="aipld-flag-note">Illustrative, constructed for this case study — not a verbatim interview quote.</span>
+    </blockquote>
+  </section>
+
+  <!-- 2. Introduction -->
+  <section class="aipld-section">
+    <h2>What's the AI Pattern Library?</h2>
+    <div class="aipld-intro-grid">
+      <div class="aipld-intro-main">
+        <p>A minimal, documented set of AI-interaction components — Confidence/Certainty Indicator, Citation/Source Card, Streaming-Response State, Correction/Feedback Control, and Human-Handoff Banner — governed and adopted the same way Michael has run design-system rollouts at Wells Fargo and Credit Suisse, applied here to a category of interface state that traditional design systems were never built to cover.</p>
+        <p style="margin-top:14px;">Standard design systems have a button, a table, a modal. They don't have an agreed answer for "here's a source citation," "here's how confident this answer is," "the response is still streaming in," or "tell the AI it got this wrong." This case study is a synthesis of what it looks like to close that gap using the same governance discipline already proven on non-AI systems.</p>
+        <ul class="aipld-problem-list">
+          <li>Every team invents its own confidence visualization, with no shared visual or verbal language</li>
+          <li>Citation/sourcing shown inconsistently across teams, undermining trust in the product family</li>
+          <li>No shared "still generating" affordance — users can't tell if the system finished or stalled</li>
+        </ul>
+        <p class="aipld-role-note"><strong>My Role:</strong> Led the design process for this concept, drawing on real design-system governance leadership at Wells Fargo, Credit Suisse, and BlackRock — the specific AI Pattern Library engagement described here is constructed for this case study, not a single real rollout.</p>
+      </div>
+      <div class="aipld-intro-side">
+        <div class="aipld-circle">
+          <strong>Target audience</strong>
+          <ul>
+            <li>Product designers on teams shipping AI features</li>
+            <li>Without a design system built for AI-specific states</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Discovery & Research KPI block -->
+  <section class="aipld-section aipld-bg-light">
+    <h2>Discovery &amp; Research — why this matters</h2>
+    <div class="aipld-kpi-row">
+      <div class="aipld-kpi">
+        <div class="aipld-kpi-num blue">3+</div>
+        <p class="aipld-kpi-desc">independently built confidence-indicator treatments found across an internal audit of shipped AI features</p>
+        <span class="aipld-kpi-flag">Illustrative audit finding, constructed for this case study</span>
+      </div>
+      <div class="aipld-kpi">
+        <div class="aipld-kpi-num purple">4</div>
+        <p class="aipld-kpi-desc">different citation/sourcing display patterns found across the same audit</p>
+        <span class="aipld-kpi-flag">Illustrative, same basis</span>
+      </div>
+    </div>
+    <p class="aipld-methods"><strong>Discovery methods:</strong> organizational audit of AI features already shipped across product teams; interviews with the designers/PMs who built them and the design-system governance stakeholders who'd need to support adoption; review of publicly published external AI-design guidance as a reference point.</p>
+    <p class="aipld-methods"><strong>Problem statement:</strong> standard design systems don't have components for AI-specific states — there's no established pattern for showing a source, showing confidence, showing an in-progress response, or telling the AI it got something wrong.</p>
+  </section>
+
+  <!-- 4. Pain points -->
+  <section class="aipld-section">
+    <h2>Pain points from interviews</h2>
+    <ol class="aipld-pain-list">
+      <li>Every team invents its own confidence visualization, with no shared visual or verbal language for "sure" vs. "not sure"</li>
+      <li>Citation/sourcing shown inconsistently — some teams show it by default, others bury it, some don't show it at all</li>
+      <li>No shared "still generating" affordance — users can't tell if the system finished or stalled</li>
+      <li>No consistent way for a user to tell the system it got something wrong, with no visible consequence where a control exists at all</li>
+      <li>No consistent way to hand off to a human when the AI shouldn't finish the task alone</li>
+    </ol>
+    <p class="aipld-callout">&ldquo;I added a thumbs-down button because it felt right to have one. I have no idea if anyone's ever looked at what it collects.&rdquo;</p>
+    <p style="text-align:center; font-size:11.5px; color:#a9a9a9; font-style:italic;">Illustrative, constructed for this case study, reasoned from pain point #4 — not a verbatim quote.</p>
+  </section>
+
+  <!-- 5. Persona card -->
+  <section class="aipld-section aipld-bg-light">
+    <h2>Primary persona</h2>
+    <div class="aipld-persona" style="margin-top:22px; background:#fff;">
+      <div class="aipld-persona-accent"></div>
+      <div class="aipld-persona-top">
+        <div class="aipld-persona-photo"><!-- VISUAL: persona photo placeholder --></div>
+        <div>
+          <div class="aipld-persona-name">Product Designer, Adopting Team</div>
+          <div class="aipld-persona-role">Ships an AI feature without a design system built for AI-specific states</div>
+        </div>
+      </div>
+      <div class="aipld-persona-quote-block">
+        &ldquo;I don't want to invent a confidence indicator from scratch again — I want to know what's already been solved and just use it.&rdquo;
+      </div>
+      <div class="aipld-persona-detail">
+        <h4>Responsibilities</h4>
+        <p>Shipping an AI feature on a deadline; deciding how to show confidence, sourcing, in-progress state, correction, and handoff without existing internal guidance.</p>
+        <h4>Key challenges</h4>
+        <p>No shared starting point for trust-critical interaction states; uncertainty about what "good" looks like without a documented baseline; risk of shipping something inconsistent with the rest of the product family.</p>
+        <h4>Wishlist</h4>
+        <ul>
+          <li>A documented, pre-validated component set for AI states</li>
+          <li>Clear "when NOT to use this" guidance</li>
+          <li>The same governance support the rest of the design system already gets</li>
+        </ul>
+        <p style="margin-top:14px; font-size:11.5px; color:#a9a9a9; font-style:italic;">Fields beyond role and core challenge are reasonably inferred from the brief, not sourced from dedicated persona interviews.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Four-column framework -->
+  <section class="aipld-section">
+    <h2>Pain Points + Business Goals + UX Strategy = Feature Set</h2>
+    <div class="aipld-framework">
+      <div class="aipld-fw-col pp">
+        <h4>Pain Points</h4>
+        <ul>
+          <li>Every team invents its own confidence visualization</li>
+          <li>Citation/sourcing shown inconsistently</li>
+          <li>No shared "still generating" affordance</li>
+          <li>No consistent correction or handoff path</li>
+        </ul>
+      </div>
+      <div class="aipld-fw-sym">+</div>
+      <div class="aipld-fw-col bg">
+        <h4>Business Goals</h4>
+        <ul>
+          <li>Consistency and speed — teams stop reinventing AI patterns from scratch</li>
+          <li>Predictable experience across products</li>
+        </ul>
+      </div>
+      <div class="aipld-fw-sym">+</div>
+      <div class="aipld-fw-col ux">
+        <h4>UX Strategy</h4>
+        <ul>
+          <li>Audit existing ad hoc AI features for recurring unsolved problems</li>
+          <li>Define and test a minimal component set with pilot teams</li>
+          <li>Run the same governance playbook proven on non-AI systems</li>
+        </ul>
+      </div>
+      <div class="aipld-fw-sym">=</div>
+      <div class="aipld-fw-col fs">
+        <h4>Feature Set</h4>
+        <ul>
+          <li>Confidence / Certainty Indicator</li>
+          <li>Citation / Source Card</li>
+          <li>Streaming-Response State</li>
+          <li>Correction / Feedback Control + Human-Handoff Banner</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Design / Process -->
+  <section class="aipld-section aipld-bg-light">
+    <h2>Design &amp; Process — 8-stage AI-Enhanced UX Process</h2>
+
+    <div class="aipld-stage">
+      <h4>1. Discovery &amp; Research</h4>
+      <p class="same">Same as always: an organizational audit and stakeholder interviews, the same starting point used for every real design-system engagement.</p>
+      <p class="new">New: mapped what's genuinely reusable across any AI feature vs. what's necessarily product-specific — a boundary question that didn't exist for buttons and modals.</p>
+    </div>
+    <div class="aipld-stage">
+      <h4>2. Problem Definition</h4>
+      <p class="same">Same as always: synthesized the audit into a named pain-point list.</p>
+      <p class="new">New: separated "the pattern doesn't exist yet" (a design system can solve this) from "users don't trust AI output in this domain" (only the interaction design of each component solves that).</p>
+    </div>
+    <div class="aipld-stage">
+      <h4>3. Competitive / Pattern Analysis</h4>
+      <p class="new">New: the "competitor" is internal — every other team's ad hoc solution — benchmarked against publicly published external AI-design guidance as a reference point, not a traditional feature-parity scan.</p>
+    </div>
+    <div class="aipld-stage">
+      <h4>4. Design Thinking &amp; Ideation</h4>
+      <p class="new">New: ideation defined each component's behavior independent of any one product's implementation, with the adoption/governance question treated as part of ideation, not an afterthought.</p>
+    </div>
+    <div class="aipld-stage">
+      <h4>5. Design Sprints &amp; Iteration</h4>
+      <p class="same">Same cadence as prior non-AI design-system work: iterative rounds with pilot teams.</p>
+      <p class="new">New: iterating on a component whose underlying data is non-deterministic (a confidence score, a streaming response) rather than a fixed screen.</p>
+    </div>
+    <div class="aipld-stage">
+      <h4>6. Usability Testing</h4>
+      <p class="new">New: tested trust and comprehension at the component level, and adoption at the governance level — do teams actually implement the pattern as documented.</p>
+    </div>
+    <div class="aipld-stage">
+      <h4>7. Delivered Solution</h4>
+      <p class="new">New: the "component" delivered is a state/behavior as much as a screen — v1 ships 5 documented components with an explicit boundary between what the pattern owns and what stays product-specific.</p>
+    </div>
+    <div class="aipld-stage" style="border-left-color: transparent;">
+      <h4>8. Outcomes</h4>
+      <p>See Results below — targets, not measured results.</p>
+    </div>
+
+    <div class="aipld-callout-box learned">
+      <strong>What we learned</strong>
+      The confidence indicator's first draft used red/yellow/green. Pilot review found red collided with the org's existing error-color language, reading as "something's broken" instead of "the system isn't sure." Redesigned around a neutral intensity scale plus a plain-text qualifier — an accessibility fix that also fixed the semantic collision.
+      <span style="display:block; margin-top:8px; font-style:italic; color:#8a9a8a; font-size:11.5px;">Illustrative iteration finding, constructed for this case study.</span>
+    </div>
+
+    <div class="aipld-visual-slot"><!-- VISUAL: Confidence / Certainty Indicator — Specimen Sheet, from 03-ai-pattern-library-wireframes.md --></div>
+  </section>
+
+  <!-- 8. Results -->
+  <section class="aipld-section">
+    <h2>Results</h2>
+    <p style="font-size:12.5px; color:#a9a9a9; font-style:italic; margin-bottom: 10px;">Targets and estimates, constructed for this case study — none of these are measured results.</p>
+    <div class="aipld-kpi-row">
+      <div class="aipld-kpi">
+        <div class="aipld-kpi-num blue">4/6</div>
+        <p class="aipld-kpi-desc">actively AI-shipping product teams adopted within two quarters of v1 (target)</p>
+      </div>
+      <div class="aipld-kpi">
+        <div class="aipld-kpi-num purple">~70%</div>
+        <p class="aipld-kpi-desc">reduction in one-off/inconsistent AI UI patterns flagged in design review (target)</p>
+      </div>
+      <div class="aipld-kpi">
+        <div class="aipld-kpi-num cyan">1-2</div>
+        <p class="aipld-kpi-desc">designer-days saved per new AI feature (illustrative estimate)</p>
+      </div>
+      <div class="aipld-kpi">
+        <div class="aipld-kpi-num magenta">5-15%</div>
+        <p class="aipld-kpi-desc">confidence-indicator override rate once embedded — trust target, healthy-use signal not a failure metric</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Key Insight -->
+  <section class="aipld-section">
+    <div class="aipld-insight">
+      <blockquote>"The hard part was never designing a confidence indicator or a citation card — those are solvable in a sprint. The hard part is the same one every design system eventually runs into: getting competing product teams, each under their own deadline, to actually adopt a shared pattern instead of shipping their own."</blockquote>
+      <cite>Core design challenge, per brief HOW — the most concrete design-judgment statement in the source material.</cite>
+    </div>
+    <div class="aipld-visual-slot"><!-- VISUAL: Governance & Adoption Dashboard, from 03-ai-pattern-library-wireframes.md --></div>
+  </section>
+
+  <!-- 10. CTA -->
+  <section class="aipld-section">
+    <div class="aipld-cta-band">
+      <h2>Interested in the full component specs?</h2>
+      <p>Get in touch to talk through the AI Pattern Library approach, or any of the other case studies in this portfolio.</p>
+      <a class="aipld-cta-btn" href="mailto:michaelthbd@yahoo.com">michaelthbd@yahoo.com</a>
+    </div>
+  </section>
+</div>
